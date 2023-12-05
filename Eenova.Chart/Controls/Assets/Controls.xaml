@@ -1,0 +1,312 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cv="clr-namespace:Eenova.Chart.Converters"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                    xmlns:local="clr-namespace:Eenova.Chart.Controls" 
+					xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+					xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    mc:Ignorable="d">
+
+
+    <Style TargetType="local:ImproveContextMenu">
+        <Setter Property="Background" Value="#FFF5F5F5"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#FF959595"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ImproveContextMenu">
+                    <Border 
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="2">
+                        <Border.Effect>
+                            <DropShadowEffect
+                                Color="LightGray"                                            
+                                ShadowDepth="3"/>
+                        </Border.Effect>
+                        <Grid>
+                            <Rectangle
+                                RadiusX="2"
+                                RadiusY="2"
+                                Fill="#FFF1F1F1"
+                                Width="28"
+                                Margin="2"
+                                HorizontalAlignment="Left"/>
+                            <Rectangle
+                                Fill="#FFE2E3E3"
+                                Width="1"
+                                Margin="30,2,0,2"
+                                HorizontalAlignment="Left"/>
+                            <Rectangle
+                                Fill="#FFFFFFFF"
+                                Width="1"
+                                Margin="31,2,0,2"
+                                HorizontalAlignment="Left"/>
+                            <ItemsPresenter
+                                    Margin="{TemplateBinding Padding}"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="local:ImproveMenuItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Padding" Value="4,3,2,3"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ImproveMenuItem">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Presenter" Storyboard.TargetProperty="Opacity" To="0.5"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Unfocused"/>
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Bg" Storyboard.TargetProperty="Opacity" To="1"/>
+                                        <ColorAnimation Duration="0" Storyboard.TargetName="InnerBorder" Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" To="#40FFFFFF"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle
+                            RadiusX="2"
+                            RadiusY="2"
+                            Fill="{TemplateBinding Background}"
+                            Stroke="{TemplateBinding BorderBrush}"
+                            StrokeThickness="1"/>
+                        <Rectangle
+                            x:Name="Bg"
+                            RadiusX="2"
+                            RadiusY="2"
+                            Stroke="#8071CBF1"
+                            StrokeThickness="1"
+                            Opacity="0">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#34C5EBFF" Offset="0"/>
+                                        <GradientStop Color="#3481D8FF" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Rectangle
+                            x:Name="InnerBorder"
+                            RadiusX="2"
+                            RadiusY="2"
+                            Stroke="Transparent"
+                            Margin="1"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+                                    Width="Auto"
+                                    MinWidth="24"/>
+                                <ColumnDefinition Width="4"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="17"/>
+                            </Grid.ColumnDefinitions>
+                            <ContentPresenter
+                                Content="{TemplateBinding Icon}"
+                                Margin="1"
+                                VerticalAlignment="Center"/>
+                            <ContentPresenter
+                                x:Name="Presenter"
+                                Content="{TemplateBinding Header}"
+                                ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                Margin="{TemplateBinding Padding}"
+                                Grid.Column="2"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <cv:VisibilityConverter x:Key="VisibilityConverter"/>
+    <cv:Brush2ColorConverter x:Key="Brush2ColorConverter"/>
+    <cv:Visibility2BoolConverter x:Key="Visibility2BoolConverter"/>
+    <cv:BoolConverter x:Key="BoolConverter"/>
+    <cv:TimeSpanConverter x:Key="TimeSpanConverter"/>
+
+    <DataTemplate x:Key="StrokeStyleItemTemplate">
+        <Grid Margin="2">
+            <Line StrokeDashArray="{Binding BindsDirectlyToSource=True}" 
+                  Stretch="Fill" StrokeStartLineCap="Square" StrokeEndLineCap="Square"
+                  Stroke="Black" StrokeThickness="1" X2="100"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="StrokeThicknessItemTemplate">
+        <Grid Margin="2">
+            <Line StrokeThickness="{Binding BindsDirectlyToSource=True}" 
+                  Stretch="Fill" StrokeStartLineCap="Square" StrokeEndLineCap="Square"
+                  Stroke="Black" StrokeDashArray="1 0" X2="100" />
+        </Grid>
+    </DataTemplate>
+
+    <Style TargetType="local:AutoValueNumbericUpDown">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:AutoValueNumbericUpDown">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Content="{TemplateBinding Text}" Margin="5,10,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                  IsChecked="{Binding IsNaN, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
+                                  ToolTipService.ToolTip="自动" Padding="5,0,0,0"/>
+                        <toolkit:NumericUpDown Margin="0,5,10,5" Padding="2" VerticalAlignment="Center"
+                                               Value="{Binding ActualValue, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                               IsEnabled="{Binding IsNaN, Converter={StaticResource BoolConverter}, RelativeSource={RelativeSource TemplatedParent}}"
+                                               DecimalPlaces="1" Height="20" Grid.Column="1" Minimum="1" Maximum="1500"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:StrokeBorder">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:StrokeBorder">
+                    <Grid>
+                        <Grid Visibility="{TemplateBinding BorderVisibility}" 
+                              Background="{TemplateBinding BorderBrush}"/>
+                        <Rectangle Fill="Transparent" 
+                                   Stroke="{TemplateBinding Stroke}"
+                                   Visibility="{TemplateBinding StrokeVisibility}"
+                                   StrokeThickness="{TemplateBinding StrokeThickness}"
+                                   StrokeDashArray="{Binding StrokeStyle,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:GroupBox">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="#687B8B"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="6,10,6,6"/>
+        <Setter Property="Title" Value="GroupBox"/>
+        <Setter Property="Content" Value="Content"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:GroupBox">
+                    <Grid>
+                        <Border Margin="0,8,0,0" CornerRadius="5"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter Margin="{TemplateBinding Padding}" />
+                        </Border>
+                        <Border Margin="10,0,10,0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top"
+							Background="{TemplateBinding Background}" >
+                            <TextBlock Margin="5,0" Text="{TemplateBinding Title}" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:EffectRect">
+        <!--<Setter Property="Foreground" Value="#9000E0FD"/>-->
+        <Setter Property="Foreground" Value="Cyan"/>
+        <Setter Property="Visibility" Value="Collapsed"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:EffectRect">
+                    <Grid>
+                        <Rectangle StrokeDashArray="10 0" Stroke="{TemplateBinding Foreground}"/>
+                        <Canvas HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <local:EffectCircle HorizontalAlignment="Left" Width="8" Height="8" Canvas.Left="-4" Canvas.Top="-4"/>
+                        </Canvas>
+                        <Canvas HorizontalAlignment="Right" VerticalAlignment="Top">
+                            <local:EffectCircle HorizontalAlignment="Left" Width="8" Height="8" Canvas.Left="-4" Canvas.Top="-4"/>
+                        </Canvas>
+                        <Canvas HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                            <local:EffectCircle HorizontalAlignment="Left" Width="8" Height="8" Canvas.Left="-4" Canvas.Top="-4"/>
+                        </Canvas>
+                        <Canvas HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                            <local:EffectCircle HorizontalAlignment="Left" Width="8" Height="8" Canvas.Left="-4" Canvas.Top="-4"/>
+                        </Canvas>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:EffectCircle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:EffectCircle">
+                    <Border>
+                        <Rectangle Stroke="DimGray" StrokeThickness="1" Opacity="1" Fill="Cyan"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:SpanDateTimePicker">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:SpanDateTimePicker">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="{TemplateBinding Orientation}" 
+                                    Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <sdk:DatePicker x:Name="Dater" Margin="1" IsDropDownOpen="False" SelectedDateFormat="Short"
+                                            Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                            SelectedDate="{Binding SpanSeconds, Converter={StaticResource TimeSpanConverter}, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <toolkit:TimeUpDown x:Name="Timer" Margin="1" Height="20"
+                                                Value="{Binding SpanSeconds, Converter={StaticResource TimeSpanConverter}, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" MinWidth="0" d:LayoutOverrides="Height">
+                                <toolkit:TimeUpDown.Format>
+                                    <toolkit:CustomTimeFormat Format="HH:mm:ss"/>
+                                </toolkit:TimeUpDown.Format>
+                            </toolkit:TimeUpDown>
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:SpanSecondsPicker">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:SpanSecondsPicker">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <toolkit:NumericUpDown x:Name="ValueBox" Maximum="1000000000" Minimum="-1000000000" Height="20" DecimalPlaces="2" MinWidth="82"/>
+                        <ComboBox x:Name="UnitComboBox" Grid.Column="1" Height="20" SelectedIndex="-1" Background="White"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

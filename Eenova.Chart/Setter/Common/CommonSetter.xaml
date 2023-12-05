@@ -1,0 +1,14 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<!--<ResourceDictionary Source="BorderSetter.xaml"/>-->
+		<!--<ResourceDictionary Source="FontSetter.xaml"/>-->
+		<!--<ResourceDictionary Source="NumbericSetter.xaml"/>-->
+		<!--<ResourceDictionary Source="PositionSetter.xaml"/>-->
+		<!--<ResourceDictionary Source="ShadowStrokeSetter.xaml"/>-->
+		<!--<ResourceDictionary Source="StrokeSetter.xaml"/>-->
+		<!--<ResourceDictionary Source="TextSetter.xaml"/>-->
+	</ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

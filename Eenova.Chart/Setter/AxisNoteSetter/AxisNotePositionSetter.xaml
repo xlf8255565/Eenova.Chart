@@ -1,0 +1,40 @@
+﻿<local:BaseSetter x:Class="Eenova.Chart.Setter.AxisNotePositionSetter"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"          
+                  xmlns:local="clr-namespace:Eenova.Chart.Setter" 
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                  xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                  mc:Ignorable="d"
+                  d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid Background="White">
+        <Grid VerticalAlignment="Top" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="5,10,5,5" Text="注释方位:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <c:NoteLocationComboBox x:Name="cbNoteLocation" Grid.Column="1" Margin="5" Height="22" 
+                                        VerticalAlignment="Center"
+                                        SelectedValue="{Binding NoteLocation,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+
+            <TextBlock Grid.Row="1" Margin="5,10,5,5" Text="水平偏移:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <toolkit:NumericUpDown x:Name="nbHorizontalOffset" Grid.Column="1" Margin="5" Height="22" Grid.Row="1"
+                                       VerticalAlignment="Center" Minimum="-1000" Maximum="1000" DecimalPlaces="2"
+                                       Value="{Binding HorizontalOffset,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+
+            <TextBlock Margin="5,10,5,5" Grid.Row="2" Text="竖直偏移:" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <toolkit:NumericUpDown x:Name="nbVerticalOffset" Grid.Column="1" Margin="5" Grid.Row="2"
+                                       VerticalAlignment="Center" Maximum="1000" DecimalPlaces="2"
+                                       Value="{Binding VerticalOffset,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+        </Grid>
+    </Grid>
+
+</local:BaseSetter>

@@ -1,0 +1,277 @@
+﻿<navigation:Page 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:ce="clr-namespace:Eenova.Chart.Elements;assembly=Eenova.Chart"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" x:Class="Eenova.App.Page2"
+                 mc:Ignorable="d"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="Page2 Page">
+	<navigation:Page.Resources>
+		<SolidColorBrush x:Key="UDStudioLandUseColor1" Color="#FFE83D00" />
+		<SolidColorBrush x:Key="UDStudioLandUseColor2" Color="#FF0096FF" />
+		<SolidColorBrush x:Key="UDStudioLandUseColor3" Color="#FFFFC503" />
+		<SolidColorBrush x:Key="UDStudioLandUseColor4" Color="#FF909191" />
+		<SolidColorBrush x:Key="UDStudioLandUseColor5" Color="#FFA229FF" />
+		<SolidColorBrush x:Key="FeelinGoodBluesAgainColor1" Color="#FF7477FF" />
+		<SolidColorBrush x:Key="FeelinGoodBluesAgainColor2" Color="#FF4F51E5" />
+		<SolidColorBrush x:Key="FeelinGoodBluesAgainColor3" Color="#FF423294" />
+		<SolidColorBrush x:Key="FeelinGoodBluesAgainColor4" Color="#FF2E204F" />
+		<SolidColorBrush x:Key="FeelinGoodBluesAgainColor5" Color="#FF08082B" />
+		<SolidColorBrush x:Key="turquioseandcopperColor1" Color="#FFC7893E" />
+		<SolidColorBrush x:Key="turquioseandcopperColor2" Color="#FF275644" />
+		<SolidColorBrush x:Key="turquioseandcopperColor3" Color="#FF8B4E22" />
+		<SolidColorBrush x:Key="turquioseandcopperColor4" Color="#FFAE7A31" />
+		<SolidColorBrush x:Key="turquioseandcopperColor5" Color="#FF262626" />
+		<SolidColorBrush x:Key="mikeColor1" Color="#FFB2FFBA" />
+		<SolidColorBrush x:Key="mikeColor2" Color="#FF004724" />
+		<SolidColorBrush x:Key="mikeColor3" Color="#FFBD212D" />
+		<SolidColorBrush x:Key="mikeColor4" Color="#FF379970" />
+		<SolidColorBrush x:Key="mikeColor5" Color="#FFFFFFFF" />
+		<SolidColorBrush x:Key="XFLJaguarColor1" Color="#FF130802" />
+		<SolidColorBrush x:Key="XFLJaguarColor2" Color="#FFBF7330" />
+		<SolidColorBrush x:Key="XFLJaguarColor3" Color="#FFF2DCC9" />
+		<SolidColorBrush x:Key="XFLJaguarColor4" Color="#FF22283B" />
+		<SolidColorBrush x:Key="XFLJaguarColor5" Color="#FFA62014" />
+		<SolidColorBrush x:Key="b000colorColor1" Color="#FFFF3300" />
+		<SolidColorBrush x:Key="b000colorColor2" Color="#FF330033" />
+		<SolidColorBrush x:Key="b000colorColor3" Color="#FF330066" />
+		<SolidColorBrush x:Key="b000colorColor4" Color="#FFFFCC00" />
+		<SolidColorBrush x:Key="b000colorColor5" Color="#FFFFFFFF" />
+		<SolidColorBrush x:Key="cheerupemokidColor1" Color="#FF556270" />
+		<SolidColorBrush x:Key="cheerupemokidColor2" Color="#FF4ECDC4" />
+		<SolidColorBrush x:Key="cheerupemokidColor3" Color="#FFC7F464" />
+		<SolidColorBrush x:Key="cheerupemokidColor4" Color="#FFFF6B6B" />
+		<SolidColorBrush x:Key="cheerupemokidColor5" Color="#FFC44D58" />
+		<SolidColorBrush x:Key="sandystonebeachoceandiverColor1" Color="#FFE6E2AF" />
+		<SolidColorBrush x:Key="sandystonebeachoceandiverColor2" Color="#FFA7A37E" />
+		<SolidColorBrush x:Key="sandystonebeachoceandiverColor3" Color="#FFEFECCA" />
+		<SolidColorBrush x:Key="sandystonebeachoceandiverColor4" Color="#FF046380" />
+		<SolidColorBrush x:Key="sandystonebeachoceandiverColor5" Color="#FF002F2F" />
+		<SolidColorBrush x:Key="careeringColor1" Color="#FFBB6AC7" />
+		<SolidColorBrush x:Key="careeringColor2" Color="#FFAF7684" />
+		<SolidColorBrush x:Key="careeringColor3" Color="#FF6F7051" />
+		<SolidColorBrush x:Key="careeringColor4" Color="#FF66848D" />
+		<SolidColorBrush x:Key="careeringColor5" Color="#FF7A76CA" />
+		<SolidColorBrush x:Key="SandinMyRoomColor1" Color="#FFB19645" />
+		<SolidColorBrush x:Key="SandinMyRoomColor2" Color="#FF72612B" />
+		<SolidColorBrush x:Key="SandinMyRoomColor3" Color="#FF7884B6" />
+		<SolidColorBrush x:Key="SandinMyRoomColor4" Color="#FFC1C8C1" />
+		<SolidColorBrush x:Key="SandinMyRoomColor5" Color="#FF6E7E64" />
+	</navigation:Page.Resources>
+	<toolkit:WrapPanel x:Name="LayoutRoot">
+		<ce:TitleNote/>
+		<ce:TitleNote/>
+		<Grid x:Name="UDStudioLandUse" Width="160" Height="48" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TextBlock Text="UD Studio Land Use" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+			<Rectangle x:Name="UDStudioLandUseColor1" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Fill="{StaticResource UDStudioLandUseColor1}" />
+			<Rectangle x:Name="UDStudioLandUseColor2" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Fill="{StaticResource UDStudioLandUseColor2}" />
+			<Rectangle x:Name="UDStudioLandUseColor3" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Fill="{StaticResource UDStudioLandUseColor3}" />
+			<Rectangle x:Name="UDStudioLandUseColor4" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Fill="{StaticResource UDStudioLandUseColor4}" />
+			<Rectangle x:Name="UDStudioLandUseColor5" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="4" Fill="{StaticResource UDStudioLandUseColor5}" />
+		</Grid>
+		<Grid x:Name="FeelinGoodBluesAgain" Width="160" Height="48" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TextBlock Text="Feelin Good Blues Again" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+			<Rectangle x:Name="FeelinGoodBluesAgainColor1" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Fill="{StaticResource FeelinGoodBluesAgainColor1}" />
+			<Rectangle x:Name="FeelinGoodBluesAgainColor2" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Fill="{StaticResource FeelinGoodBluesAgainColor2}" />
+			<Rectangle x:Name="FeelinGoodBluesAgainColor3" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Fill="{StaticResource FeelinGoodBluesAgainColor3}" />
+			<Rectangle x:Name="FeelinGoodBluesAgainColor4" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Fill="{StaticResource FeelinGoodBluesAgainColor4}" />
+			<Rectangle x:Name="FeelinGoodBluesAgainColor5" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="4" Fill="{StaticResource FeelinGoodBluesAgainColor5}" />
+		</Grid>
+		<Grid x:Name="turquioseandcopper" Width="160" Height="48" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TextBlock Text="turquiose and copper" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+			<Rectangle x:Name="turquioseandcopperColor1" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Fill="{StaticResource turquioseandcopperColor1}" />
+			<Rectangle x:Name="turquioseandcopperColor2" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Fill="{StaticResource turquioseandcopperColor2}" />
+			<Rectangle x:Name="turquioseandcopperColor3" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Fill="{StaticResource turquioseandcopperColor3}" />
+			<Rectangle x:Name="turquioseandcopperColor4" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Fill="{StaticResource turquioseandcopperColor4}" />
+			<Rectangle x:Name="turquioseandcopperColor5" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="4" Fill="{StaticResource turquioseandcopperColor5}" />
+		</Grid>
+		<Grid x:Name="mike" Width="160" Height="48" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TextBlock Text="mike" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+			<Rectangle x:Name="mikeColor1" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Fill="{StaticResource mikeColor1}" />
+			<Rectangle x:Name="mikeColor2" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Fill="{StaticResource mikeColor2}" />
+			<Rectangle x:Name="mikeColor3" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Fill="{StaticResource mikeColor3}" />
+			<Rectangle x:Name="mikeColor4" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Fill="{StaticResource mikeColor4}" />
+			<Rectangle x:Name="mikeColor5" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="4" Fill="{StaticResource mikeColor5}" />
+		</Grid>
+		<Grid x:Name="XFLJaguar" Width="160" Height="48" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TextBlock Text="XFL  Jaguar" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+			<Rectangle x:Name="XFLJaguarColor1" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Fill="{StaticResource XFLJaguarColor1}" />
+			<Rectangle x:Name="XFLJaguarColor2" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Fill="{StaticResource XFLJaguarColor2}" />
+			<Rectangle x:Name="XFLJaguarColor3" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Fill="{StaticResource XFLJaguarColor3}" />
+			<Rectangle x:Name="XFLJaguarColor4" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Fill="{StaticResource XFLJaguarColor4}" />
+			<Rectangle x:Name="XFLJaguarColor5" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="4" Fill="{StaticResource XFLJaguarColor5}" />
+		</Grid>
+		<Grid x:Name="b000color" Width="160" Height="48" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TextBlock Text="b000color" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+			<Rectangle x:Name="b000colorColor1" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Fill="{StaticResource b000colorColor1}" />
+			<Rectangle x:Name="b000colorColor2" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Fill="{StaticResource b000colorColor2}" />
+			<Rectangle x:Name="b000colorColor3" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Fill="{StaticResource b000colorColor3}" />
+			<Rectangle x:Name="b000colorColor4" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Fill="{StaticResource b000colorColor4}" />
+			<Rectangle x:Name="b000colorColor5" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="4" Fill="{StaticResource b000colorColor5}" />
+		</Grid>
+		<Grid x:Name="cheerupemokid" Width="160" Height="48" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TextBlock Text="cheer up emo kid" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+			<Rectangle x:Name="cheerupemokidColor1" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Fill="{StaticResource cheerupemokidColor1}" />
+			<Rectangle x:Name="cheerupemokidColor2" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Fill="{StaticResource cheerupemokidColor2}" />
+			<Rectangle x:Name="cheerupemokidColor3" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Fill="{StaticResource cheerupemokidColor3}" />
+			<Rectangle x:Name="cheerupemokidColor4" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Fill="{StaticResource cheerupemokidColor4}" />
+			<Rectangle x:Name="cheerupemokidColor5" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="4" Fill="{StaticResource cheerupemokidColor5}" />
+		</Grid>
+		<Grid x:Name="sandystonebeachoceandiver" Width="160" Height="48" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TextBlock Text="sandy stone beach ocean diver" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+			<Rectangle x:Name="sandystonebeachoceandiverColor1" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Fill="{StaticResource sandystonebeachoceandiverColor1}" />
+			<Rectangle x:Name="sandystonebeachoceandiverColor2" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Fill="{StaticResource sandystonebeachoceandiverColor2}" />
+			<Rectangle x:Name="sandystonebeachoceandiverColor3" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Fill="{StaticResource sandystonebeachoceandiverColor3}" />
+			<Rectangle x:Name="sandystonebeachoceandiverColor4" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Fill="{StaticResource sandystonebeachoceandiverColor4}" />
+			<Rectangle x:Name="sandystonebeachoceandiverColor5" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="4" Fill="{StaticResource sandystonebeachoceandiverColor5}" />
+		</Grid>
+		<Grid x:Name="careering" Width="160" Height="48" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TextBlock Text="careering" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+			<Rectangle x:Name="careeringColor1" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Fill="{StaticResource careeringColor1}" />
+			<Rectangle x:Name="careeringColor2" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Fill="{StaticResource careeringColor2}" />
+			<Rectangle x:Name="careeringColor3" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Fill="{StaticResource careeringColor3}" />
+			<Rectangle x:Name="careeringColor4" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Fill="{StaticResource careeringColor4}" />
+			<Rectangle x:Name="careeringColor5" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="4" Fill="{StaticResource careeringColor5}" />
+		</Grid>
+		<Grid x:Name="SandinMyRoom" Width="160" Height="48" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TextBlock Text="Sand in My Room" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+			<Rectangle x:Name="SandinMyRoomColor1" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Fill="{StaticResource SandinMyRoomColor1}" />
+			<Rectangle x:Name="SandinMyRoomColor2" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Fill="{StaticResource SandinMyRoomColor2}" />
+			<Rectangle x:Name="SandinMyRoomColor3" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Fill="{StaticResource SandinMyRoomColor3}" />
+			<Rectangle x:Name="SandinMyRoomColor4" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Fill="{StaticResource SandinMyRoomColor4}" />
+			<Rectangle x:Name="SandinMyRoomColor5" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="4" Fill="{StaticResource SandinMyRoomColor5}" />
+		</Grid>
+		<Grid x:Name="SandinMyRoom_Copy" Width="160" Height="48" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TextBlock Text="Sand in My Room" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+			<Rectangle x:Name="SandinMyRoomColor6" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Fill="{StaticResource SandinMyRoomColor1}" />
+			<Rectangle x:Name="SandinMyRoomColor7" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Fill="{StaticResource SandinMyRoomColor2}" />
+			<Rectangle x:Name="SandinMyRoomColor8" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Fill="{StaticResource SandinMyRoomColor3}" />
+			<Rectangle x:Name="SandinMyRoomColor9" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Fill="{StaticResource SandinMyRoomColor4}" />
+			<Rectangle x:Name="SandinMyRoomColor10" Width="Auto" Height="Auto" StrokeThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="4" Fill="{StaticResource SandinMyRoomColor5}" />
+		</Grid>
+	</toolkit:WrapPanel>
+</navigation:Page>

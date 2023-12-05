@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Elements"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="local:GridLine">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:GridLine">
+                    <ContentPresenter Content="{TemplateBinding LineHost}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

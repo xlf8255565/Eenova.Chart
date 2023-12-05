@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8ABD1150-2323-4007-ABE6-E1CB7296141F}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Eenova.Chart</RootNamespace>
+    <AssemblyName>Eenova.Chart</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20621.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit.Internals" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\DataLinkMovePointBehavior.cs" />
+    <Compile Include="Behaviors\DataLinkMovePointEventArgs.cs" />
+    <Compile Include="Converters\Int2ScrollVisibilityConverter.cs" />
+    <Compile Include="Elements\Alarms\AlarmRegion.cs" />
+    <Compile Include="Elements\Alarms\AlarmBoard.cs" />
+    <Compile Include="Behaviors\AutoDecimalPlacesBehavior.cs" />
+    <Compile Include="Behaviors\MouseDragElementBehavior.cs" />
+    <Compile Include="Behaviors\MouseResizeBehavior.cs" />
+    <Compile Include="Controls\AutoValueNumbericUpDown.cs" />
+    <Compile Include="Controls\BindingComboBox.cs" />
+    <Compile Include="Controls\BindingListBox.cs" />
+    <Compile Include="Controls\ColorPicker.cs" />
+    <Compile Include="Controls\ImproveContextMenu.cs" />
+    <Compile Include="Controls\ImproveMenuBase.cs" />
+    <Compile Include="Controls\ImproveMenuItem.cs" />
+    <Compile Include="Controls\OrderTypeComboBox.cs" />
+    <Compile Include="Converters\CompositeTransformTranslateToPointConverter.cs" />
+    <Compile Include="Converters\VisibilityConverter.cs" />
+    <Compile Include="Elements\Alarms\Alarm.cs" />
+    <Compile Include="Elements\Alarms\AlarmGroup.cs" />
+    <Compile Include="Elements\AxisLabels\AxisLabelsY.cs" />
+    <Compile Include="Elements\AxisLabels\AxisLabelsX.cs" />
+    <Compile Include="Elements\Collection\AxisNoteCollection.cs" />
+    <Compile Include="Elements\AxisTicks\AxisTicksY.cs" />
+    <Compile Include="Elements\AxisTicks\AxisTicksX.cs" />
+    <Compile Include="Elements\Chart\ChartChild.cs" />
+    <Compile Include="Elements\Collection\ChartChildCollection.cs" />
+    <Compile Include="Elements\Chart\ChartResizer.cs" />
+    <Compile Include="Elements\Collection\ChildCollection.cs" />
+    <Compile Include="Elements\Collection\DataPointCollection.cs" />
+    <Compile Include="Elements\EventArgs.cs" />
+    <Compile Include="Elements\GridLine\GridLineY.cs" />
+    <Compile Include="Elements\GridLine\GridLineX.cs" />
+    <Compile Include="Elements\IPart.cs" />
+    <Compile Include="Elements\MarkupArea\MarkupArea.cs" />
+    <Compile Include="Elements\MarkupArea\MarkupAreaItem.cs" />
+    <Compile Include="Elements\MarkupLine\MarkupLineItem.cs" />
+    <Compile Include="Elements\MarkupLine\MarkupLine.cs" />
+    <Compile Include="Elements\Collection\DataLinkCollection.cs" />
+    <Compile Include="Elements\PlotArea\PlotAreaEx.cs" />
+    <Compile Include="Elements\VerticalNote\VerticalNote.cs" />
+    <Compile Include="Helpers\Image\EditableImage.cs" />
+    <Compile Include="Helpers\Image\PngEncoder.cs" />
+    <Compile Include="Helpers\Utility.cs" />
+    <Compile Include="Helpers\FileOperator.cs" />
+    <Compile Include="Setter\Alarm\AlarmRegionSetter.xaml.cs">
+      <DependentUpon>AlarmRegionSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\Alarm\AlarmBoardSetter.xaml.cs">
+      <DependentUpon>AlarmBoardSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisNoteSetter\AxisNoteLeftSideSetter.xaml.cs">
+      <DependentUpon>AxisNoteLeftSideSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisNoteSetter\AxisNoteRightSideSetter.xaml.cs">
+      <DependentUpon>AxisNoteRightSideSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisNoteSetter\AxisNotePointingLineSetter.xaml.cs">
+      <DependentUpon>AxisNotePointingLineSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisSetter\AxisDateTimeFormatSetter.xaml.cs">
+      <DependentUpon>AxisDateTimeFormatSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisSetter\AxisNumbericFormatSetter.xaml.cs">
+      <DependentUpon>AxisNumbericFormatSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisSetter\AxisDateTimeTicksSetter.xaml.cs">
+      <DependentUpon>AxisDateTimeTicksSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisSetter\AxisNumbericTicksSetter.xaml.cs">
+      <DependentUpon>AxisNumbericTicksSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisSetter\AxisTextTicksSetter.xaml.cs">
+      <DependentUpon>AxisTextTicksSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisSetter\AxisTextFormatSetter.xaml.cs">
+      <DependentUpon>AxisTextFormatSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\PloatAreaSetter\AxisYPositionSetter.xaml.cs">
+      <DependentUpon>AxisYPositionSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\PloatAreaSetter\AxisXPositionSetter.xaml.cs">
+      <DependentUpon>AxisXPositionSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\Markup\MarkupLineSetter.xaml.cs">
+      <DependentUpon>MarkupLineSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\Markup\MarkupAreaSetter.xaml.cs">
+      <DependentUpon>MarkupAreaSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\Parts\FormatSelector.cs" />
+    <Compile Include="Setter\Parts\MarginSelector.cs" />
+    <Compile Include="Controls\ComboBox\NoteLocationComboBox.cs" />
+    <Compile Include="Controls\OrientationTextBlock.cs" />
+    <Compile Include="Converters\TimeSpanConverter.cs" />
+    <Compile Include="Elements\AxisNote\AxisNote.cs" />
+    <Compile Include="Elements\AxisNote\AxisNoteAddWindow.xaml.cs">
+      <DependentUpon>AxisNoteAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Elements\DataLink\DataLink.cs" />
+    <Compile Include="Elements\GridLine\GridLine.cs" />
+    <Compile Include="Elements\PlotArea\PlotArea.cs" />
+    <Compile Include="Elements\Title\TitleNote.cs" />
+    <Compile Include="Factories\FormaterFactory.cs" />
+    <Compile Include="FontFamilies.cs" />
+    <Compile Include="Helpers\Format\DateTimeFormator.cs" />
+    <Compile Include="Helpers\Format\Formater.cs" />
+    <Compile Include="Helpers\Format\NumbericFormator.cs" />
+    <Compile Include="Helpers\Format\TextFormator.cs" />
+    <Compile Include="Setter\AxisSetter\AxisFormatSetter.xaml.cs">
+      <DependentUpon>AxisFormatSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisSetter\AxisLabelsPositionSetter.xaml.cs">
+      <DependentUpon>AxisLabelsPositionSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisNoteSetter\AxisNoteLineStyleSetter.xaml.cs">
+      <DependentUpon>AxisNoteLineStyleSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisNoteSetter\AxisNotePositionSetter.xaml.cs">
+      <DependentUpon>AxisNotePositionSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisSetter\AxisTicksStrokeSetter.xaml.cs">
+      <DependentUpon>AxisTicksStrokeSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\AxisSetter\AxisTitlePositionSetter.xaml.cs">
+      <DependentUpon>AxisTitlePositionSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\CommonSetter\CommonPositionSetter.xaml.cs">
+      <DependentUpon>CommonPositionSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\CommonSetter\CommonStrokeSetter.xaml.cs">
+      <DependentUpon>CommonStrokeSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\CommonSetter\CommonTextSetter.xaml.cs">
+      <DependentUpon>CommonTextSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\LinkSetter\LinkStrokeSetter.xaml.cs">
+      <DependentUpon>LinkStrokeSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\CommonSetter\CommonAlignmentSetter.xaml.cs">
+      <DependentUpon>CommonAlignmentSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\CommonSetter\CommonBorderSetter.xaml.cs">
+      <DependentUpon>CommonBorderSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\CommonSetter\CommonFontSetter.xaml.cs">
+      <DependentUpon>CommonFontSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\LinkSetter\LinkInfoSetter.xaml.cs">
+      <DependentUpon>LinkInfoSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\LinkSetter\LinkMarkSetter.xaml.cs">
+      <DependentUpon>LinkMarkSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\LegendSetter\OrientationSetter.xaml.cs">
+      <DependentUpon>OrientationSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\PloatAreaSetter\PlotAreaPositionSetter.xaml.cs">
+      <DependentUpon>PlotAreaPositionSetter.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Setter\PloatAreaSetter\PlotAreaShowSetter.xaml.cs">
+      <DependentUpon>PlotAreaShowSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setter\Parts\PointSelector.cs" />
+    <Compile Include="Setter\SetterModel.cs" />
+    <Compile Include="Styler\AxisLabelsStyler.cs" />
+    <Compile Include="Styler\AxisNoteStyler.cs" />
+    <Compile Include="Styler\AxisStyler.cs" />
+    <Compile Include="Styler\ChartStyler.cs" />
+    <Compile Include="Styler\DataLinkStyler.cs" />
+    <Compile Include="Styler\GridLineStyler.cs" />
+    <Compile Include="Styler\LegendStyler.cs" />
+    <Compile Include="Styler\PlotAreaStyler.cs" />
+    <Compile Include="Styler\TitleNoteStyler.cs" />
+    <Compile Include="Styler\TitleStyler.cs" />
+    <Compile Include="Styler\VerticalNoteStyler.cs" />
+    <Compile Include="Styler\XmlStyler.cs" />
+    <Compile Include="Styler\XmlValueReader.cs" />
+    <Compile Include="Elements\INotifyToDelete.cs" />
+    <Compile Include="StrokeStyles.cs" />
+    <Compile Include="Setter\Parts\AlignmentSelector.cs" />
+    <Compile Include="Controls\ComboBox\AxisAlignmentComboBox.cs" />
+    <Compile Include="Controls\ComboBox\AxisLocationComboBox.cs" />
+    <Compile Include="Controls\ComboBox\AxisYTypeComboBox.cs" />
+    <Compile Include="Setter\Parts\BorderPreview.cs" />
+    <Compile Include="Setter\Parts\BorderSelector.cs" />
+    <Compile Include="Controls\EffectCircle.cs" />
+    <Compile Include="Controls\ComboBox\OrientationComboBox.cs" />
+    <Compile Include="Controls\ComboBox\XAlignmentComboBox.cs" />
+    <Compile Include="Controls\ComboBox\ShapeTypeComboBox.cs" />
+    <Compile Include="Controls\SpanDateTimePicker.cs" />
+    <Compile Include="Controls\EffectRect.cs" />
+    <Compile Include="Controls\ComboBox\FontFamilyComboBox.cs" />
+    <Compile Include="Controls\GroupBox.cs" />
+    <Compile Include="Controls\ComboBox\HorizontalAlignmentComboBox.cs" />
+    <Compile Include="Controls\ComboBox\SizeComboBox.cs" />
+    <Compile Include="Controls\SpanSecondsPicker.cs" />
+    <Compile Include="Controls\StrokeBorder.cs" />
+    <Compile Include="Setter\Parts\StrokeSelector.cs" />
+    <Compile Include="Controls\ComboBox\StrokeStyleComboBox.cs" />
+    <Compile Include="Controls\ComboBox\StrokeThicknessComboBox.cs" />
+    <Compile Include="Controls\ComboBox\TicksShowComboBox.cs" />
+    <Compile Include="Controls\ComboBox\VerticalAlignmentComboBox.cs" />
+    <Compile Include="Converters\FontWeightConverter.cs" />
+    <Compile Include="Converters\BoolConverter.cs" />
+    <Compile Include="Converters\Brush2ColorConverter.cs" />
+    <Compile Include="Converters\FontFamilyConverter.cs" />
+    <Compile Include="Converters\FontStyleConverter.cs" />
+    <Compile Include="Converters\FontUnderlineConverter.cs" />
+    <Compile Include="Converters\Visibility2BoolConverter.cs" />
+    <Compile Include="Elements\Axis\Axis.cs" />
+    <Compile Include="Elements\AxisLabels\AxisLabels.cs" />
+    <Compile Include="Elements\AxisTicks\AxisTicks.cs" />
+    <Compile Include="Elements\Axis\AxisX.cs" />
+    <Compile Include="Elements\Axis\AxisY.cs" />
+    <Compile Include="Elements\Chart\Chart.cs" />
+    <Compile Include="Elements\Collections.cs" />
+    <Compile Include="Elements\DataLink\DataPoint.cs" />
+    <Compile Include="Elements\AxisLabels\LabelItem.cs" />
+    <Compile Include="Elements\Legend\Legend.cs" />
+    <Compile Include="Elements\Mark\Mark.cs" />
+    <Compile Include="Elements\Title\Title.cs" />
+    <Compile Include="Elements\UIControl.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="Factories\CoordConverterFactory.cs" />
+    <Compile Include="Factories\DataCalculatorFactory.cs" />
+    <Compile Include="Factories\DataValidatorFactory.cs" />
+    <Compile Include="Factories\IntervalsBuilderFactory.cs" />
+    <Compile Include="Factories\LabelsBuilderFactory.cs" />
+    <Compile Include="Factories\MarkFactory.cs" />
+    <Compile Include="Factories\ShapeFactory.cs" />
+    <Compile Include="Factories\ValueCalculatorFactory.cs" />
+    <Compile Include="Helpers\CoordConvert\CoordConverter.cs" />
+    <Compile Include="Helpers\CoordConvert\DateTimeCoordConverter.cs" />
+    <Compile Include="Helpers\CoordConvert\NumbericCoordConverter.cs" />
+    <Compile Include="Helpers\CoordConvert\TextCoordConverter.cs" />
+    <Compile Include="Helpers\DataCalculate\DataCalculator.cs" />
+    <Compile Include="Helpers\DataCalculate\DateTimeDataCalculator.cs" />
+    <Compile Include="Helpers\DataCalculate\NumbericDataCalculator.cs" />
+    <Compile Include="Helpers\DataCalculate\TextDataCalculator.cs" />
+    <Compile Include="Helpers\DataValidate\DataValidator.cs" />
+    <Compile Include="Helpers\DataValidate\DateTimeDataValidator.cs" />
+    <Compile Include="Helpers\DataValidate\NumbericDataValidator.cs" />
+    <Compile Include="Helpers\DataValidate\TextDataValidator.cs" />
+    <Compile Include="Helpers\TicksHelper\DateTimeTicksHelper.cs" />
+    <Compile Include="Helpers\TicksHelper\TicksHelper.cs" />
+    <Compile Include="Helpers\TicksHelper\NumbericTicksHelper.cs" />
+    <Compile Include="Helpers\TicksHelper\TextTicksHelper.cs" />
+    <Compile Include="Helpers\LabelsBuild\DateTimeLabelsBuilder.cs" />
+    <Compile Include="Helpers\LabelsBuild\LabelsBuilder.cs" />
+    <Compile Include="Helpers\LabelsBuild\NumbericLabelsBuilder.cs" />
+    <Compile Include="Helpers\LabelsBuild\TextLabelsBuilder.cs" />
+    <Compile Include="Helpers\TimeHelper.cs" />
+    <Compile Include="Helpers\ValueCalculate\CommonFFFValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\CommonFFTValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\CommonFTFValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\CommonFTTValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\CommonTFFValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\CommonTFTValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\CommonTTFValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\CommonTTTValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\LogFFFValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\LogFFTValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\LogFTFValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\LogFTTValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\LogTFFValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\LogTFTValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\LogTTFValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\LogTTTValueCalculator.cs" />
+    <Compile Include="Helpers\ValueCalculate\ValueCalculateAlgorithm.cs" />
+    <Compile Include="Helpers\ValueCalculate\ValueCalculator.cs" />
+    <Compile Include="Setter\BaseSetter.cs" />
+    <Compile Include="Setter\ISetter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setter\SettingItem.cs" />
+    <Compile Include="Setter\SettingWindow.xaml.cs">
+      <DependentUpon>SettingWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Helpers\ValueCalculate\Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\Assets\Controls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Elements\Alarms\AlarmRegion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Elements\DataLink\DataLink.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Elements\GridLine\GridLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Elements\VerticalNote\VerticalNote.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Setter\Alarm\AlarmRegionSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\Alarm\AlarmBoardSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\AxisNoteSetter\AxisNoteLeftSideSetter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Setter\AxisNoteSetter\AxisNoteRightSideSetter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Setter\AxisNoteSetter\AxisNotePointingLineSetter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Setter\AxisSetter\AxisDateTimeFormatSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\AxisSetter\AxisNumbericFormatSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\AxisSetter\AxisDateTimeTicksSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\AxisSetter\AxisNumbericTicksSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\AxisSetter\AxisFormatSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\AxisSetter\AxisLabelsPositionSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\AxisNoteSetter\AxisNoteLineStyleSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\AxisNoteSetter\AxisNotePositionSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\AxisSetter\AxisTicksStrokeSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\AxisSetter\AxisTitlePositionSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\AxisSetter\AxisTextTicksSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\AxisSetter\AxisTextFormatSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\PloatAreaSetter\AxisYPositionSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\PloatAreaSetter\AxisXPositionSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\CommonSetter\CommonPositionSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\CommonSetter\CommonStrokeSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\CommonSetter\CommonTextSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\LinkSetter\LinkStrokeSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\CommonSetter\CommonAlignmentSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Elements\Axis\Axis.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Elements\Assets\Elements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Elements\AxisNote\AxisNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Elements\Legend\Legend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Elements\Mark\Mark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Elements\PlotArea\PlotArea.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Elements\Title\Title.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Elements\Chart\Chart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Elements\AxisNote\AxisNoteAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\CommonSetter\CommonBorderSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\CommonSetter\CommonFontSetter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Setter\LinkSetter\LinkInfoSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\LinkSetter\LinkMarkSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\LegendSetter\OrientationSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\Markup\MarkupLineSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\Markup\MarkupAreaSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\PloatAreaSetter\PlotAreaPositionSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\PloatAreaSetter\PlotAreaShowSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\Assets\Setter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setter\SettingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SLColorPickerDemo\Extend\Extend.csproj">
+      <Project>{230E8199-9F2B-434F-AA64-AB8CD0513D5A}</Project>
+      <Name>Extend</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

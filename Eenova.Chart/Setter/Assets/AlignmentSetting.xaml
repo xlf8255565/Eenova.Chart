@@ -1,0 +1,113 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                    xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                    xmlns:cv="clr-namespace:Eenova.Chart.Converters"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c1="clr-namespace:C1.Silverlight.Chart.Editor;assembly=C1.Silverlight.Chart.Editor"
+                    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d">
+
+    <Style TargetType="local:TextAlignmentSetting">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TextAlignmentSetting">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition MinHeight="45"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="33"/>
+                            <ColumnDefinition MinWidth="118"/>
+                        </Grid.ColumnDefinitions>
+
+                        <c:AlignmentComboBox Header="文本对齐方式" Margin="5"
+                                             Background="{TemplateBinding Background}"
+                                             BorderBrush="{TemplateBinding BorderBrush}"
+                                             SHorizontalAlignment="{Binding SHorizontalAlignment, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                             SVerticalAlignment="{Binding SVerticalAlignment, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                        <c:GroupBox Title="文本方向" Margin="5" Grid.Column="1"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}">
+                            <Grid Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <c:OrientationComboBox Margin="5" Grid.ColumnSpan="2" VerticalAlignment="Center"
+                                                       SelectedValue="{Binding SOrientation, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <TextBlock Margin="5,10,5,5" TextWrapping="Wrap" Text="角度:" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <toolkit:NumericUpDown x:Name="numericUpDown" Grid.Column="1" Height="20" Minimum="-180" Maximum="180"
+                                                       Margin="5" Grid.Row="1" VerticalAlignment="Center" DecimalPlaces="2"
+                                                       Value="{Binding STextRotation, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Grid>
+                        </c:GroupBox>
+
+                        <c:GroupBox Title="示例" Margin="5,0,5,5" Grid.Row="1" Grid.ColumnSpan="2"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}">
+                            <Border BorderBrush="Black" BorderThickness="1" Margin="0">
+                                <c:OrientationTextBlock Margin="5" Text="文本方向"
+                                                        VerticalAlignment="{TemplateBinding SVerticalAlignment}"
+                                                        HorizontalAlignment="{TemplateBinding SHorizontalAlignment}"
+                                                        Orientation="{TemplateBinding SOrientation}"
+                                                        RenderTransformOrigin="0.5,0.5">
+                                    <c:OrientationTextBlock.RenderTransform>
+                                        <CompositeTransform Rotation="{Binding Value, ElementName=numericUpDown}"/>
+                                    </c:OrientationTextBlock.RenderTransform>
+                                </c:OrientationTextBlock>
+                            </Border>
+                        </c:GroupBox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:OrientationSetting">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:OrientationSetting">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <c:GroupBox Margin="5" Title="方向"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}">
+                            <Grid Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Margin="15,5,5,5" TextWrapping="Wrap" Text="子项排列:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <c:OrientationComboBox Height="22" Margin="5,0,60,0"
+                        			SelectedValue="{Binding SOrientation, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Top" d:LayoutOverrides="Width" Grid.Column="1"/>
+                            </Grid>
+                        </c:GroupBox>
+                        <c:GroupBox Margin="5,0,5,5" Title="示例" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" Grid.Row="1">
+                            <toolkit:WrapPanel Margin="0" Orientation="{TemplateBinding SOrientation}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Border BorderBrush="Black" BorderThickness="1" Height="30" Width="30" Margin="2" Background="#FFED9696"/>
+                                <Border BorderBrush="Black" BorderThickness="1" Height="30" Width="30" Margin="2" Background="#FF87BA82"/>
+                                <Border BorderBrush="Black" BorderThickness="1" Height="30" Width="30" Margin="2" Background="#FF67B1AF"/>
+                            </toolkit:WrapPanel>
+                        </c:GroupBox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

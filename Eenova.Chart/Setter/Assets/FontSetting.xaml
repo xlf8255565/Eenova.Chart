@@ -1,0 +1,103 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                    xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                    xmlns:cv="clr-namespace:Eenova.Chart.Converters"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c1="clr-namespace:C1.Silverlight.Chart.Editor;assembly=C1.Silverlight.Chart.Editor"
+                    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit">
+
+    <cv:Bold2BoolConverter x:Key="Bold2BoolConverter"/>
+    <cv:FontStyleConverter x:Key="FontStyleConverter"/>
+    <cv:Underline2BoolConverter x:Key="Underline2BoolConverter"/>
+    <cv:Brush2ColorConverter x:Key="Brush2ColorConverter"/>
+    <cv:FontFamilyConverter x:Key="FontFamilyConverter"/>
+
+    <Style TargetType="local:FontSetting">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="SFontSize" Value="16"/>
+        <Setter Property="SForeground" Value="#FF000002"/>
+        <Setter Property="SBackground" Value="Transparent"/>
+        <Setter Property="SFontFamily" Value="Arial"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:FontSetting">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <c:GroupBox Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Title="设置" Margin="5,5,5,0">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="0.4*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="0.4*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="字体:" Margin="5"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <c:FontFamilyComboBox Grid.Column="1" Margin="5,0,10,5" Height="22" 
+                                                      SelectedValue="{Binding SFontFamily, Mode=TwoWay,Converter={StaticResource FontFamilyConverter}, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                <TextBlock Text="字号:" Margin="5" Grid.Column="2" 
+                                           HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <c:SizeComboBox Margin="5,0,10,5" Grid.Column="3" Height="22"
+                                                SelectedItem="{Binding SFontSize, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                <TextBlock Text="颜色:" Margin="5,10,5,5" Grid.Row="1"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <c1:AutoColorPicker Grid.Column="1" Margin="5,5,10,5" Grid.Row="1" Height="22"
+                                                    SelectedColor="{Binding SForeground, Mode=TwoWay,Converter={StaticResource Brush2ColorConverter}, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                <TextBlock Text="背景色:" Grid.Column="2" Margin="5,10,5,5" Grid.Row="1"  
+                                           HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <c1:AutoColorPicker Grid.Column="3" Margin="5,5,10,5" Grid.Row="1" Height="22"
+                                                    SelectedColor="{Binding SBackground, Mode=TwoWay,Converter={StaticResource Brush2ColorConverter}, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                <StackPanel Grid.ColumnSpan="4" Margin="5,5,5,0" Grid.Row="2" Orientation="Horizontal">
+                                    <CheckBox Content="下划线" Margin="20,0"
+                                              IsChecked="{Binding STextDecorations, Mode=TwoWay,Converter={StaticResource Underline2BoolConverter}, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                    <CheckBox Content="倾斜" Margin="20,0"
+                                              IsChecked="{Binding SFontStyle, Mode=TwoWay,Converter={StaticResource FontStyleConverter}, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                    <CheckBox Content="加粗" Margin="20,0"
+                                              IsChecked="{Binding SFontWeight, Mode=TwoWay,Converter={StaticResource Bold2BoolConverter}, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                </StackPanel>
+
+                            </Grid>
+                        </c:GroupBox>
+
+                        <c:GroupBox Title="预览" Margin="5"
+                                    Width="Auto" Background="White" Grid.RowSpan="2" Grid.Row="1"
+                                    BorderBrush="{TemplateBinding BorderBrush}">
+                            <Border BorderBrush="Black" BorderThickness="1"
+                                    Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <c:OrientationTextBlock Margin="5" Orientation="Horizontal" Text="示例 ABC 123"
+                                                        VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                        Background="{TemplateBinding SBackground}"
+                                                        Foreground="{TemplateBinding SForeground}"
+                                                        FontFamily="{TemplateBinding SFontFamily}"
+                                                        FontSize="{TemplateBinding SFontSize}"
+                                                        FontStyle="{TemplateBinding SFontStyle}"
+                                                        FontWeight="{TemplateBinding SFontWeight}"
+                                                        TextDecorations="{TemplateBinding STextDecorations}"/>
+                            </Border>
+                        </c:GroupBox>
+                        
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>

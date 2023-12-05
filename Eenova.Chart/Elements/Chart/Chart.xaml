@@ -1,0 +1,65 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Elements"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+                    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cv="clr-namespace:Eenova.Chart.Converters"
+                    xmlns:c="clr-namespace:Eenova.Chart.Controls">
+
+    <cv:Int2ScrollVisibilityConverter x:Key="Int2ScrollVisibilityConverter"/>
+    
+    <Style TargetType="local:Chart">
+        <Setter Property="MarkBrush" Value="DeepSkyBlue"/>
+        <!--<Setter Property="MarkVisibility" Value="Visible"/>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:Chart">
+                    <Grid Background="{TemplateBinding Background}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="SelectStates">
+                                <VisualState x:Name="Normal">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SelectedViewer">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Enter">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SelectedViewer">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <c:StrokeBorder BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderVisibility="{TemplateBinding BorderVisibility}"
+                                        StrokeStyle="{Binding StrokeStyle,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                                        StrokeVisibility="{TemplateBinding StrokeVisibility}"
+                                        Stroke="{TemplateBinding Stroke}"
+                                        StrokeThickness="{TemplateBinding StrokeThickness}"/>
+                        <!--底下加个透明的背景，用于接收事件。-->
+                        <Grid Background="Transparent"/>
+                        <!--选中效果-->
+                        <ContentPresenter Content="{TemplateBinding SelectedEffect}"/>
+                        <ScrollViewer VerticalScrollBarVisibility="Disabled"
+                                      HorizontalScrollBarVisibility="{Binding Multiple,RelativeSource={RelativeSource TemplatedParent},Converter={StaticResource Int2ScrollVisibilityConverter}}">
+                            <ContentPresenter Content="{TemplateBinding PlotsHost}"/>
+                        </ScrollViewer>
+                        <ContentPresenter Content="{TemplateBinding LegendsHost}"/>
+                        <ContentPresenter Content="{TemplateBinding TitlesHost}"/>
+                        <CheckBox x:Name="SelectedViewer" Margin="2" 
+                                  ToolTipService.ToolTip="是否选中" Opacity="0"
+                                  Visibility="{TemplateBinding SelectorVisibility}"
+                                  IsChecked="{Binding IsSelected,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                        <Border Background="{x:Null}" BorderThickness="4" BorderBrush="{TemplateBinding MarkBrush}" Visibility="{TemplateBinding MarkVisibility}" Margin="-5"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

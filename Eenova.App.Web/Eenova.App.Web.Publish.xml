@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="D:\Mobile" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="配置文件1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Eenova.App.Web.dll" publishTime="08/04/2011 10:38:27" />
+    <file relUrl="Index.html" publishTime="07/15/2011 15:51:25" />
+    <file relUrl="Web.config" publishTime="08/04/2011 10:38:29" />
+    <file relUrl="Silverlight.js" publishTime="01/24/2011 13:36:35" />
+    <file relUrl="ClientBin/Eenova.Chart.Test.xap" publishTime="08/03/2011 11:12:31" />
+    <file relUrl="bin/Eenova.App.Web.pdb" publishTime="08/04/2011 10:38:27" />
+    <file relUrl="ClientBin/Eenova.App.xap" publishTime="08/03/2011 11:12:30" />
+    <file relUrl="Eenova.Chart.Test.html" publishTime="03/12/2011 17:16:35" />
+  </publishProfile>
+</publishData>

@@ -1,0 +1,187 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Elements"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:c="clr-namespace:Eenova.Chart.Controls" 
+                    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+                    xmlns:b="clr-namespace:Eenova.Chart.Behaviors"
+                    mc:Ignorable="d">
+
+    <Style TargetType="local:AxisNote">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:AxisNote">
+                    <Grid>
+                        <Grid HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              Width="{TemplateBinding InternalWidth}"
+                              Margin="{TemplateBinding InternalMargin}">
+                            <Grid.RenderTransform>
+                                <CompositeTransform TranslateY="{Binding Top,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Grid.RenderTransform>
+                        	<i:Interaction.Behaviors>
+                        		<b:MouseDragElementBehavior ConstrainToParentBounds="True" DragDirection="Y"/>
+                        	</i:Interaction.Behaviors>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Line x:Name="LeftSide"
+                                      Height="{TemplateBinding SideHeight}"
+                                      Y2="{TemplateBinding SideHeight}"
+                                      Stretch="Fill"
+                                      StrokeDashCap="Square" 
+                                      StrokeEndLineCap="Square" 
+                                      StrokeStartLineCap="Square"
+                                      Stroke="{TemplateBinding LeftSideStroke}"
+                                      Visibility="{TemplateBinding LeftSideVisibility}"
+                                      StrokeThickness="{TemplateBinding LeftSideThickness}"
+                                      StrokeDashArray="{Binding LeftSideStyle, RelativeSource={RelativeSource TemplatedParent}}"
+                                      />
+
+                                <ed:BlockArrow Grid.Column="1" 
+                                           UseLayoutRounding="False"
+                                           Orientation="Left"
+                                           ArrowheadAngle="52" 
+                                           Fill="{TemplateBinding Stroke}" 
+                                           Width="{TemplateBinding ArrowSize}"
+                                           Height="{TemplateBinding ArrowSize}"/>
+
+                                <Canvas Grid.Column="2"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        >
+                                    <local:Title x:Name="Note" Padding="0" 
+                                                 Text="{Binding Text,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"
+                                                 FontFamily="{Binding FontFamily,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"
+                                                 FontSize="{Binding FontSize,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"
+                                                 FontStyle="{Binding FontStyle,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"
+                                                 FontWeight="{Binding FontWeight,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"
+                                                 Foreground="{Binding Foreground,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"
+                                                 Background="{Binding Background,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"/>
+                                    <Polyline x:Name="Pointing" 
+                                              Stroke="{TemplateBinding PointingLineStroke}"
+                                              Visibility="{TemplateBinding PointingLineVisibility}"
+                                              StrokeThickness="{TemplateBinding PointingLineThickness}"
+                                              StrokeDashArray="{Binding PointingLineStyle, RelativeSource={RelativeSource TemplatedParent}}"
+                                              >
+                                        <Polyline.Points>
+                                            <Point X="0" Y="0"/>
+                                            <Point X="10" Y="10"/>
+                                        </Polyline.Points>
+                                    </Polyline>
+                                </Canvas>
+
+                                <Line x:Name="StrokeLine" 
+                                  Grid.Column="2" 
+                                  VerticalAlignment="Center" 
+                                  X2="{TemplateBinding InternalWidth}"
+                                  Stretch="Fill"
+                                  StrokeDashCap="Square" 
+                                  StrokeEndLineCap="Square" 
+                                  StrokeStartLineCap="Square"
+                                  Stroke="{TemplateBinding Stroke}"
+                                  Visibility="{TemplateBinding StrokeVisibility}"
+                                  StrokeThickness="{TemplateBinding StrokeThickness}"
+                                  StrokeDashArray="{Binding StrokeStyle, RelativeSource={RelativeSource TemplatedParent}}"
+                                  />
+
+                                <ed:BlockArrow Grid.Column="3"
+                                           UseLayoutRounding="False"
+                                           Orientation="Right" 
+                                           ArrowheadAngle="52"
+                                           Fill="{TemplateBinding Stroke}"
+                                           Width="{TemplateBinding ArrowSize}"
+                                           Height="{TemplateBinding ArrowSize}"/>
+
+                                <Line x:Name="RightSide"
+                                  Grid.Column="4"
+                                      Height="{TemplateBinding SideHeight}"
+                                  Y2="{TemplateBinding SideHeight}"
+                                  Stretch="Fill"
+                                  StrokeDashCap="Square" 
+                                  StrokeEndLineCap="Square" 
+                                  StrokeStartLineCap="Square"
+                                  Stroke="{TemplateBinding RightSideStroke}"
+                                  Visibility="{TemplateBinding RightSideVisibility}"
+                                  StrokeThickness="{TemplateBinding RightSideThickness}"
+                                  StrokeDashArray="{Binding RightSideStyle, RelativeSource={RelativeSource TemplatedParent}}"
+                                  />
+                            </Grid>
+                            <ContentPresenter Content="{TemplateBinding SelectedEffect}"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:AxisNote" x:Key="AxisNote">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:AxisNote">
+                    <Grid x:Name="Root">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <Canvas HorizontalAlignment="Center" VerticalAlignment="Center" Width="1">
+                                    <local:Title x:Name="Note" StrokeVisibility="Collapsed" Padding="0" Text="注释内容"/>
+                                    <Polyline x:Name="Pointing" Stroke="Black" Visibility="Collapsed">
+                                        <Polyline.Points>
+                                            <Point X="0" Y="0"/>
+                                            <Point X="10" Y="10"/>
+                                        </Polyline.Points>
+                                    </Polyline>
+                                </Canvas>
+                                <Canvas HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <Line x:Name="StrokeLine" Fill="Black" VerticalAlignment="Center"
+                                          StrokeEndLineCap="Square" StrokeStartLineCap="Square" Stretch="Fill"
+                                          Stroke="{Binding Foreground, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
+                                          StrokeThickness="{Binding StrokeThickness, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          Height="{TemplateBinding StrokeThickness}"/>
+                                </Canvas>
+                            </Grid>
+                            <ed:BlockArrow UseLayoutRounding="False" ArrowheadAngle="52" Orientation="Left"
+                                           Fill="{TemplateBinding Foreground}" 
+                                           Width="{TemplateBinding ArrowSize}"
+                                           Height="{TemplateBinding ArrowSize}"/>
+                            <ed:BlockArrow Grid.Column="2" Orientation="Right" UseLayoutRounding="False" ArrowheadAngle="52"
+                                           Width="{TemplateBinding ArrowSize}"
+                                           Height="{TemplateBinding ArrowSize}"
+                                           Fill="{TemplateBinding Foreground}"/>
+                        </Grid>
+                        <Canvas HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Polyline x:Name="LeftSide" Stroke="Black">
+                                <Polyline.Points>
+                                    <Point X="0" Y="0"/>
+                                    <Point X="0" Y="0"/>
+                                </Polyline.Points>
+                            </Polyline>
+                        </Canvas>
+                        <Canvas HorizontalAlignment="Right" VerticalAlignment="Top">
+                            <Polyline x:Name="RightSide" Stroke="Black">
+                                <Polyline.Points>
+                                    <Point X="0" Y="0"/>
+                                    <Point X="0" Y="0"/>
+                                </Polyline.Points>
+                            </Polyline>
+                        </Canvas>
+                        <ContentPresenter Content="{TemplateBinding SelectedEffect}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

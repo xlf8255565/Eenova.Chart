@@ -1,0 +1,118 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                    xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                    xmlns:cv="clr-namespace:Eenova.Chart.Converters"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c1="clr-namespace:C1.Silverlight.Chart.Editor;assembly=C1.Silverlight.Chart.Editor"
+                    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d">
+
+    <cv:Visibility2BoolConverter x:Key="Visibility2BoolConverter"/>
+
+    <Style TargetType="local:PlotAreaVisibilitySetting">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:PlotAreaVisibilitySetting">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <c:GroupBox Margin="5" Title="上半区"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}">
+                            <StackPanel Margin="0">
+                                <CheckBox Content="是否显示" Margin="5,5,5,0"
+                                          IsChecked="{Binding STopAreaVisibility,Mode=TwoWay,Converter={StaticResource Visibility2BoolConverter},RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <CheckBox Content="纵向网格线" Margin="10,5,5,0"
+                                	IsChecked="{Binding SGridLineXTopVisibility, Converter={StaticResource Visibility2BoolConverter}, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                <CheckBox Content="左边纵轴" Margin="10,5,5,0"
+                                          IsChecked="{Binding SIsAxisYLeftTopVisible,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <CheckBox Content="左边横向网格线" Margin="10,5,5,0"
+                                	IsChecked="{Binding SGridLineYLeftTopVisibility, Converter={StaticResource Visibility2BoolConverter}, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                <CheckBox Content="右边纵轴" Margin="10,5,5,0" 
+                                          IsChecked="{Binding SIsAxisYRightTopVisible,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                <CheckBox Content="右边横向网格线" Margin="10,5,5,5"
+                                          IsChecked="{Binding SGridLineYRightTopVisibility,Mode=TwoWay,Converter={StaticResource Visibility2BoolConverter},RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                            </StackPanel>
+                        </c:GroupBox>
+
+                        <c:GroupBox Grid.Column="1" Margin="5" Title="下半区"
+                                    Background="{TemplateBinding Background}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}">
+                            <StackPanel Margin="0">
+                                <CheckBox Content="是否显示" Margin="5,5,5,0"
+                                          IsChecked="{Binding SBottomAreaVisibility,Mode=TwoWay,Converter={StaticResource Visibility2BoolConverter},RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <CheckBox Content="纵向网格线" Margin="10,5,5,0"
+                                	IsChecked="{Binding SGridLineXBottomVisibility, Converter={StaticResource Visibility2BoolConverter}, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                <CheckBox Content="左边纵轴" Margin="10,5,5,0" 
+                                          IsChecked="{Binding SIsAxisYLeftBottomVisible,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <CheckBox Content="左边横向网格线" Margin="10,5,5,0"
+                                	IsChecked="{Binding SGridLineYLeftBottomVisibility, Converter={StaticResource Visibility2BoolConverter}, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                <CheckBox Content="右边纵轴" Margin="10,5,5,0"
+                                          IsChecked="{Binding SIsAxisYRightBottomVisible,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                <CheckBox Content="右边横向网格线" Margin="10,5,5,5"
+                                          IsChecked="{Binding SGridLineYRightBottomVisibility,Mode=TwoWay,Converter={StaticResource Visibility2BoolConverter},RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                            </StackPanel>
+                        </c:GroupBox>
+                        <c:GroupBox Margin="5,0,5,5" Grid.Row="1" Grid.ColumnSpan="2" Title="X轴设置" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
+                            <Grid Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <CheckBox Content="是否可见" Margin="10,0" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                          IsChecked="{Binding SIsAxisXVisible,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <c:XAlignmentComboBox Grid.Column="1" Margin="10,0" Height="20"
+                                                      IsEnabled="{Binding SIsAxisXVisible,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                                                      SelectedValue="{Binding SXAlignment,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Left"/>
+                            </Grid>
+                        </c:GroupBox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:LinkAxisYSetting">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:LinkAxisYSetting">
+                	<Grid Background="{TemplateBinding Background}">
+                		<c:GroupBox Margin="5" Title="Y轴" VerticalAlignment="Top" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
+                			<Grid Margin="0">
+                				<Grid.ColumnDefinitions>
+                					<ColumnDefinition Width="Auto"/>
+                					<ColumnDefinition/>
+                				</Grid.ColumnDefinitions>
+                				<TextBlock Margin="10,10,5,0" TextWrapping="Wrap" Text="选取关联的Y轴:" VerticalAlignment="Center"/>
+                				<c:AxisYTypeComboBox Grid.Column="1" Margin="5,5,20,0" VerticalAlignment="Center" 
+                                                     SelectedValue="{Binding SAxisYType,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                			</Grid>
+                		</c:GroupBox>
+                	</Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

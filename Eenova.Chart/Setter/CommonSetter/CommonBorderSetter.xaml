@@ -1,0 +1,39 @@
+﻿<local:BaseSetter x:Class="Eenova.Chart.Setter.CommonBorderSetter"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  mc:Ignorable="d"
+                  d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <local:StrokeSelector x:Name="sStroke" Header="边框" Grid.RowSpan="2" Margin="5"
+                              SStroke="{Binding Stroke, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                              SStrokeStyle="{Binding StrokeStyle, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                              SStrokeThickness="{Binding StrokeThickness, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                              SStrokeVisibility="{Binding StrokeVisibility, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+
+        <local:BorderSelector x:Name="sBorder" Header="背景色" Margin="0,5,5,5" Grid.Column="1"
+                              SBorderBrush="{Binding BorderBrush, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                              SBorderVisibility="{Binding BorderVisibility, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+
+        <local:BorderPreview Margin="0,0,5,5" Grid.Row="1" Grid.Column="1"
+                             SBorderBrush="{Binding SBorderBrush,ElementName=sBorder}"
+                             SBorderVisibility="{Binding SBorderVisibility,ElementName=sBorder}"
+                             SStroke="{Binding SStroke,ElementName=sStroke}"
+                             SStrokeStyle="{Binding SStrokeStyle,ElementName=sStroke}"
+                             SStrokeThickness="{Binding SStrokeThickness,ElementName=sStroke}"
+                             SStrokeVisibility="{Binding SStrokeVisibility,ElementName=sStroke}"/>
+    </Grid>
+
+</local:BaseSetter>

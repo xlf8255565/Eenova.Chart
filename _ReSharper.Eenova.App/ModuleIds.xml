@@ -1,0 +1,8 @@
+<Modules>
+  <Module PersistentId="557D1E49-AA75-4001-8708-9611343692A4" ModuleId="Eenova.App" />
+  <Module PersistentId="8ABD1150-2323-4007-ABE6-E1CB7296141F" ModuleId="Eenova.Chart" />
+  <Module PersistentId="9178230C-14BF-4493-ADFD-8556D75A6BC5" ModuleId="Eenova.Chart.Test" />
+  <Module PersistentId="7020124F-9FFC-4AC3-8F3D-AAB8E0240759" ModuleId="System.Windows" />
+  <Module PersistentId="mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" ModuleId="mscorlib" />
+  <Module PersistentId="System.Windows, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" ModuleId="System.Windows_1" />
+</Modules>

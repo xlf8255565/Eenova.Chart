@@ -1,0 +1,140 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Elements"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+                    xmlns:b="clr-namespace:Eenova.Chart.Behaviors">
+
+    <Style TargetType="local:PlotArea">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:PlotArea">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"
+                              Margin="{TemplateBinding Padding}">
+                            <!--底框-->
+                            <c:StrokeBorder BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderVisibility="{TemplateBinding BorderVisibility}"
+                                            Stroke="{TemplateBinding Stroke}"
+                                            StrokeThickness="{TemplateBinding StrokeThickness}"
+                                            StrokeVisibility="{TemplateBinding StrokeVisibility}"
+                                            StrokeStyle="{Binding StrokeStyle}"/>
+
+                            <!--背景容器-->
+                            <StackPanel>
+                                <ContentPresenter Content="{TemplateBinding TopMarkUpHost}"
+                                                  Height="{TemplateBinding TopHeight}"
+                                                  Width="{TemplateBinding Length}"
+                                                  Visibility="{TemplateBinding TopVisibility}"/>
+                                <ContentPresenter Content="{TemplateBinding BottomMarkupHost}"
+                                                  Height="{TemplateBinding BottomHeight}"
+                                                  Width="{TemplateBinding Length}"
+                                                  Visibility="{TemplateBinding BottomVisibility}"/>
+                            </StackPanel>
+                            
+                            <!--Y轴容器-->
+                            <StackPanel>
+                                <ContentPresenter Content="{TemplateBinding TopAxisYHost}"
+                                                  Height="{TemplateBinding TopHeight}"
+                                                  Width="{TemplateBinding Length}"
+                                                  Visibility="{TemplateBinding TopVisibility}"/>
+                                <ContentPresenter Content="{TemplateBinding BottomAxisYHost}"
+                                                  Height="{TemplateBinding BottomHeight}"
+                                                  Width="{TemplateBinding Length}"
+                                                  Visibility="{TemplateBinding BottomVisibility}"/>
+                            </StackPanel>
+
+                            <!--x轴容器-->
+                            <ContentPresenter VerticalAlignment="Top" HorizontalAlignment="Left"
+                                              Content="{TemplateBinding AxisXHost}"/>
+                            <!--数据线容器-->
+                            <StackPanel >
+                                <ContentPresenter Content="{TemplateBinding TopLinesHost}"
+                                                  Height="{TemplateBinding TopHeight}"
+                                                  Width="{TemplateBinding Length}"
+                                                  Visibility="{TemplateBinding TopVisibility}"/>
+                                <ContentPresenter Content="{TemplateBinding BottomLinesHost}"
+                                                  Height="{TemplateBinding BottomHeight}"
+                                                  Width="{TemplateBinding Length}"
+                                                  Visibility="{TemplateBinding BottomVisibility}"/>
+                            </StackPanel>
+
+                            <!--标识线容器-->
+                            <StackPanel >
+                                <ContentPresenter Content="{TemplateBinding TopMarkLinesHost}"
+                                                  Height="{TemplateBinding TopHeight}"
+                                                  Width="{TemplateBinding Length}"
+                                                  Visibility="{TemplateBinding TopVisibility}"/>
+                                <ContentPresenter Content="{TemplateBinding BottomMarkLinesHost}"
+                                                  Height="{TemplateBinding BottomHeight}"
+                                                  Width="{TemplateBinding Length}"
+                                                  Visibility="{TemplateBinding BottomVisibility}"/>
+                            </StackPanel>
+
+                            <ContentPresenter Width="{TemplateBinding Length}"
+                                              Content="{TemplateBinding NotesHost}"/>
+                            
+                            <ContentPresenter Content="{TemplateBinding SelectedEffect}"/>
+
+                            <StackPanel>
+                                <Rectangle Stroke="Transparent" StrokeThickness="1"
+                                           Visibility="{TemplateBinding TopVisibility}"
+                                           Height="{Binding TopHeight, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                           Width="{Binding Length, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                	<i:Interaction.Behaviors>
+                                		<b:MouseResizeBehavior IsRightBottomOnly="True"/>
+                                	</i:Interaction.Behaviors>
+                                </Rectangle>
+                                <Rectangle Stroke="Transparent" StrokeThickness="1" 
+                                           Visibility="{TemplateBinding BottomVisibility}"
+                                           Height="{Binding BottomHeight, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                           Width="{Binding Length, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                	<i:Interaction.Behaviors>
+                                		<b:MouseResizeBehavior IsRightBottomOnly="True"/>
+                                	</i:Interaction.Behaviors>
+                                </Rectangle>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:PlotArea" x:Key="PlotAreaStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:PlotArea">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"
+                              Margin="{TemplateBinding Padding}">
+                            <!--底框-->
+                            <c:StrokeBorder BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderVisibility="{TemplateBinding BorderVisibility}"
+                                            Stroke="{TemplateBinding Stroke}"
+                                            StrokeThickness="{TemplateBinding StrokeThickness}"
+                                            StrokeVisibility="{TemplateBinding StrokeVisibility}"
+                                            StrokeStyle="{Binding StrokeStyle}"/>
+                            <!--Y轴容器-->
+                            <StackPanel>
+                                <ContentPresenter Content="{TemplateBinding TopAxisYHost}"/>
+                                <ContentPresenter Content="{TemplateBinding BottomAxisYHost}"/>
+                            </StackPanel>
+
+                            <!--x轴容器-->
+                            <ContentPresenter VerticalAlignment="Top" HorizontalAlignment="Left"
+                                              Content="{TemplateBinding AxisXHost}"/>
+                            <StackPanel >
+                                <ContentPresenter Content="{TemplateBinding TopLinesHost}"/>
+                                <ContentPresenter Content="{TemplateBinding BottomLinesHost}"/>
+                            </StackPanel>
+                            <Canvas x:Name="NotesContainer" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <ContentPresenter Content="{TemplateBinding SelectedEffect}"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

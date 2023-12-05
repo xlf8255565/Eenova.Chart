@@ -1,0 +1,25 @@
+﻿<xapCache source="E:\work\Chart\Eenova.App\Eenova.App\Bin\Debug\Eenova.App.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="2013/3/7 16:42:24">
+  <file source="E:\work\Chart\Eenova.App\Eenova.App\obj\Debug\Eenova.App.dll" archivePath="Eenova.App.dll" lastWriteTime="2013/3/7 16:42:24" />
+  <file source="E:\work\Chart\Eenova.App\Eenova.Chart\Bin\Debug\Eenova.Chart.dll" archivePath="Eenova.Chart.dll" lastWriteTime="2013/3/7 16:27:51" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Silverlight\v4.0\Libraries\Microsoft.Expression.Drawing.dll" archivePath="Microsoft.Expression.Drawing.dll" lastWriteTime="2010/6/21 17:56:56" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Silverlight\v4.0\Libraries\Microsoft.Expression.Interactions.dll" archivePath="Microsoft.Expression.Interactions.dll" lastWriteTime="2010/6/21 17:56:56" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Runtime.Serialization.Json.dll" archivePath="System.Runtime.Serialization.Json.dll" lastWriteTime="2011/3/10 0:08:16" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Toolkit\Apr10\Bin\System.Windows.Controls.DataVisualization.Toolkit.dll" archivePath="System.Windows.Controls.DataVisualization.Toolkit.dll" lastWriteTime="2010/4/13 20:14:58" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.dll" archivePath="System.Windows.Controls.dll" lastWriteTime="2011/3/10 0:08:16" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Toolkit\Apr10\Bin\System.Windows.Controls.Input.Toolkit.dll" archivePath="System.Windows.Controls.Input.Toolkit.dll" lastWriteTime="2010/4/13 20:14:58" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.Navigation.dll" archivePath="System.Windows.Controls.Navigation.dll" lastWriteTime="2011/3/10 0:08:16" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Toolkit\Apr10\Bin\System.Windows.Controls.Toolkit.dll" archivePath="System.Windows.Controls.Toolkit.dll" lastWriteTime="2010/4/13 20:15:14" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Toolkit\Apr10\Bin\System.Windows.Controls.Toolkit.Internals.dll" archivePath="System.Windows.Controls.Toolkit.Internals.dll" lastWriteTime="2010/4/13 19:59:48" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Silverlight\v4.0\Libraries\System.Windows.Interactivity.dll" archivePath="System.Windows.Interactivity.dll" lastWriteTime="2010/6/21 17:56:56" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Xml.Linq.dll" archivePath="System.Xml.Linq.dll" lastWriteTime="2011/3/10 0:08:16" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Xml.Serialization.dll" archivePath="System.Xml.Serialization.dll" lastWriteTime="2011/3/10 0:08:16" />
+  <file source="E:\work\Chart\Eenova.App\Eenova.Chart\Bin\Debug\Extend.dll" archivePath="Extend.dll" lastWriteTime="2013/3/7 16:23:17" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\zh-Hans\System.Runtime.Serialization.Json.resources.dll" archivePath="zh-Hans\System.Runtime.Serialization.Json.resources.dll" lastWriteTime="2011/3/10 6:37:56" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\zh-Hans\System.Windows.Controls.resources.dll" archivePath="zh-Hans\System.Windows.Controls.resources.dll" lastWriteTime="2011/3/10 6:37:56" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\zh-Hans\System.Windows.Controls.Navigation.resources.dll" archivePath="zh-Hans\System.Windows.Controls.Navigation.resources.dll" lastWriteTime="2011/3/10 6:37:56" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\zh-Hans\System.Xml.Linq.resources.dll" archivePath="zh-Hans\System.Xml.Linq.resources.dll" lastWriteTime="2011/3/10 6:37:56" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\zh-Hans\System.Xml.Serialization.resources.dll" archivePath="zh-Hans\System.Xml.Serialization.resources.dll" lastWriteTime="2011/3/10 6:37:56" />
+  <file source="E:\work\Chart\Eenova.App\Eenova.App\XMLFile1.xml" archivePath="XMLFile1.xml" lastWriteTime="2012/1/2 17:31:45" />
+  <file source="E:\work\Chart\Eenova.App\Eenova.App\XMLFile2.xml" archivePath="XMLFile2.xml" lastWriteTime="2012/1/2 17:31:45" />
+  <file source="E:\work\Chart\Eenova.App\Eenova.App\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2013/3/7 16:23:23" />
+</xapCache>

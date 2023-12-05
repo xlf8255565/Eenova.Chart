@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Elements"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit">
+
+    <Style TargetType="local:Legend">
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Stroke" Value="#FF000001"/>
+        <Setter Property="Foreground" Value="#FF000001"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:Legend">
+                    <Grid>
+                        <c:StrokeBorder Margin="0"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderVisibility="{TemplateBinding BorderVisibility}"
+                                        StrokeStyle="{Binding StrokeStyle,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                                        StrokeVisibility="{TemplateBinding StrokeVisibility}"
+                                        Stroke="{TemplateBinding Stroke}"
+                                        StrokeThickness="{TemplateBinding StrokeThickness}"/>
+
+                        <Grid Background="Transparent"/>
+                        <ContentPresenter Content="{TemplateBinding SelectedEffect}"/>
+                        <ContentPresenter Content="{TemplateBinding ItemsHost}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

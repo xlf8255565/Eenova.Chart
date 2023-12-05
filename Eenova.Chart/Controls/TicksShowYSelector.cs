@@ -1,0 +1,55 @@
+﻿using System.Windows;
+using System.Windows.Controls;
+
+namespace Eenova.Chart.Controls
+{
+    /// <summary>
+    /// Y轴的.
+    /// </summary>
+    public class TicksShowYSelector: Control
+    {
+        public TicksShowYSelector()
+        {
+            this.DefaultStyleKey = typeof(TicksShowYSelector);
+        }
+
+
+
+        public string Header
+        {
+            get { return (string)GetValue(HeaderProperty); }
+            set { SetValue(HeaderProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Header.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty HeaderProperty =
+            DependencyProperty.Register("Header", typeof(string), typeof(TicksShowYSelector), null);
+
+
+
+        public TicksShow SMainTicksShow
+        {
+            get { return (TicksShow)GetValue(SMainTicksShowProperty); }
+            set { SetValue(SMainTicksShowProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for SMainTicksShow.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty SMainTicksShowProperty =
+            DependencyProperty.Register("SMainTicksShow", typeof(TicksShow), typeof(TicksShowYSelector), null);
+
+
+
+        public TicksShow SSubTicksShow
+        {
+            get { return (TicksShow)GetValue(SSubTicksShowProperty); }
+            set { SetValue(SSubTicksShowProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for SSubTicksShow.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty SSubTicksShowProperty =
+            DependencyProperty.Register("SSubTicksShow", typeof(TicksShow), typeof(TicksShowYSelector), null);
+
+
+
+    }
+}

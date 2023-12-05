@@ -1,0 +1,38 @@
+﻿<Chart VerticalAlignment="Center" HorizontalAlignment="Center">
+  <TitleNotes>
+    <Title Text="制图制表控件Demo" Stroke="#FF000000" StrokeStyle="1 0" Width="127" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#FF000000" />
+  </TitleNotes>
+  <PlotAreas>
+    <PlotArea Margin="0,30,80,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+      <AxisX DataType="DateTime">
+        <Title Text="横轴" HorizontalAlignment="Right" Foreground="#FF000000" />
+        <Labels Foreground="#FF000000" />
+      </AxisX>
+      <AxisY1 LabelLocation="TopOrLeft" TitleLocation="TopOrLeft" MainTicksShow="TopOrLeft" SubTicksShow="TopOrLeft">
+        <Title Text="左上纵轴" Orientation="Vertical" VerticalAlignment="Top" Foreground="#FF000000" />
+        <Labels Foreground="#FF000000" />
+      </AxisY1>
+      <AxisY2 LabelLocation="TopOrLeft" TitleLocation="TopOrLeft" MainTicksShow="TopOrLeft" SubTicksShow="TopOrLeft">
+        <Title Text="左下纵轴" Orientation="Vertical" VerticalAlignment="Bottom" Foreground="#FF000000" />
+        <Labels />
+      </AxisY2>
+      <AxisY3>
+        <Title Text="右上纵轴" Orientation="Vertical" VerticalAlignment="Top" Foreground="#FF000000" />
+        <Labels Foreground="#FF000000" />
+      </AxisY3>
+      <AxisY4>
+        <Title Text="右下纵轴" Orientation="Vertical" VerticalAlignment="Bottom" Foreground="#FF000000" />
+        <Labels />
+      </AxisY4>
+      <GridLineX1 />
+      <GridLineX2 />
+      <GridLineY1 />
+      <GridLineY2 />
+      <GridLineY3 />
+      <GridLineY4 />
+    </PlotArea>
+  </PlotAreas>
+  <Legends>
+    <Legend Stroke="#FF000001" MinHeight="5" MinWidth="5" BorderBrush="#00FFFFFF" Margin="10,10,10,10" VerticalAlignment="Top" HorizontalAlignment="Right" Foreground="#FF000001" Background="#00FFFFFF" FontSize="12" BindingIndex="0" />
+  </Legends>
+</Chart>

@@ -1,0 +1,87 @@
+﻿<local:BaseSetter x:Class="Eenova.Chart.Setter.AlarmRegionSetter"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:cv="clr-namespace:Eenova.Chart.Converters"
+                  xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                  xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                  xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                  xmlns:behaviors="clr-namespace:Eenova.Chart.Behaviors"
+                  mc:Ignorable="d"
+                  d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid x:Name="LayoutSetter">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <c:GroupBox Margin="5" Title="报警范围">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <!--<TextBlock Margin="5">
+                        <Run Text="当前深度："/>
+                        <Run Text="{Binding Deep}"/>
+                    </TextBlock>-->
+
+                    <TextBlock Margin="5"
+                               Text="{Binding Deep, StringFormat='初始范围：\{0\}'}"/>
+                    
+                    <TextBlock Text="当前范围：" Grid.Column="2" Margin="5"/>
+                    <c:BindingComboBox x:Name="cbAlarmGroup" Grid.Column="3" Width="100"
+                                       HorizontalAlignment="Left" VerticalAlignment="Center"
+                                       ItemsSource="{Binding ParentBoard.AlarmGroups}"
+                                       DisplayMemberPath="Deep" SelectedValuePath="Alarms"
+                                       SelectedItem="{Binding AlarmGroup,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+                </Grid>
+            </c:GroupBox>
+            <c:GroupBox Margin="5" Title="报警详情" Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox x:Name="lbItems" Padding="1" MinWidth="80"
+                             ItemsSource="{Binding SelectedValue,ElementName=cbAlarmGroup}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Rectangle Height="10" Width="65" Stroke="Black" StrokeThickness="1">
+                                    <Rectangle.Fill>
+                                        <SolidColorBrush Color="{Binding Color}"/>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Grid Grid.Column="1" DataContext="{Binding SelectedItem,ElementName=lbItems}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="最小值：" Margin="0,10,0,5"
+                                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="1" Margin="0,5,10,5" 
+                                 IsReadOnly="True" Text="{Binding Min}"/>
+
+                        <TextBlock Text="最大值：" Grid.Row="1" Margin="5,10,0,5"
+                                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="1" Grid.Row="1" Margin="0,5,10,5"
+                                 IsReadOnly="True" Text="{Binding Max}"/>
+                    </Grid>
+                </Grid>
+            </c:GroupBox>
+        </Grid>
+    </Grid>
+    </local:BaseSetter>
+

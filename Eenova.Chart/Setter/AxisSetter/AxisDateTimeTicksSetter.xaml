@@ -1,0 +1,63 @@
+﻿<local:BaseSetter x:Class="Eenova.Chart.Setter.AxisDateTimeTicksSetter"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:cv="clr-namespace:Eenova.Chart.Converters"
+                  xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                  xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                  mc:Ignorable="d" 
+                  d:DesignHeight="300" d:DesignWidth="400">
+
+    <local:BaseSetter.Resources>
+        <cv:BoolConverter x:Key="BoolConverter"/>
+    </local:BaseSetter.Resources>
+
+    <Grid Background="White">
+        <c:GroupBox Margin="5" Title="时间轴刻度">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <CheckBox x:Name="cbIsMinValueAuto" Content="最小值:" Margin="10,5,0,0" Padding="5,0,0,0"
+                          HorizontalAlignment="Left" VerticalAlignment="Center" ToolTipService.ToolTip="自动"
+                          IsChecked="{Binding IsMinValueAuto,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+                <c:SpanDateTimePicker x:Name="nbMinValue" Margin="85,0,0,5" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2"
+                                      IsEnabled="{Binding IsChecked,Converter={StaticResource BoolConverter},ElementName=cbIsMinValueAuto}"
+                                      SpanSeconds="{Binding MinValue,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+
+                <CheckBox x:Name="cbIsMaxValueAuto" Content="最大值:" Margin="10,10,0,0" Grid.Row="1" Padding="5,0,0,0"
+                          HorizontalAlignment="Left" VerticalAlignment="Center" ToolTipService.ToolTip="自动"
+                          IsChecked="{Binding IsMaxValueAuto,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+                <c:SpanDateTimePicker x:Name="nbMaxValue" Margin="85,5,0,5" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2"
+                                      IsEnabled="{Binding IsChecked,Converter={StaticResource BoolConverter},ElementName=cbIsMaxValueAuto}"
+                                      SpanSeconds="{Binding MaxValue,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+
+                <CheckBox x:Name="cbIsMainUnitAuto" Content="主要刻度单位:" Margin="10,10,0,0" Grid.Row="2" Padding="5,0,0,0"
+                          HorizontalAlignment="Left" VerticalAlignment="Center" ToolTipService.ToolTip="自动"
+                          IsChecked="{Binding IsMainUnitAuto,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+                <c:SpanSecondsPicker x:Name="nbMainUnit" Grid.Column="1" Margin="5" Grid.Row="2"
+                                     IsEnabled="{Binding IsChecked,Converter={StaticResource BoolConverter},ElementName=cbIsMainUnitAuto}"
+                                     SpanSeconds="{Binding MainUnit,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+
+                <CheckBox x:Name="cbIsSubUnitAuto" Content="次要刻度单位:" Margin="10,10,0,0" Grid.Row="3" Padding="5,0,0,0"
+                          VerticalAlignment="Center" HorizontalAlignment="Left" ToolTipService.ToolTip="自动"
+                          IsChecked="{Binding IsSubUnitAuto,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+                <c:SpanSecondsPicker x:Name="nbSubUnit" Grid.Column="1" Margin="5" Grid.Row="3" VerticalAlignment="Top"
+                                     IsEnabled="{Binding IsChecked,Converter={StaticResource BoolConverter},ElementName=cbIsSubUnitAuto}"
+                                     SpanSeconds="{Binding SubUnit,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+
+                <CheckBox x:Name="cbIsDesc" Content="数值次序反转" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="4"
+                          IsChecked="{Binding IsDesc, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+            </Grid>
+        </c:GroupBox>
+    </Grid>
+</local:BaseSetter>

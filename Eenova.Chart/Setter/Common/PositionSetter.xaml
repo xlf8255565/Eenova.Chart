@@ -1,0 +1,80 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                    xmlns:cv="clr-namespace:Eenova.Chart.Converters"
+                    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                    >
+
+    <cv:BoolConverter x:Key="BoolConverter"/>
+
+    <Style TargetType="local:PositionSetter">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:PositionSetter">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <local:AlignmentSelector Header="对齐方式" Margin="5"
+                                             Background="{TemplateBinding Background}"
+                                             BorderBrush="{TemplateBinding BorderBrush}"
+                                             SHorizontalAlignment="{Binding SHorizontalAlignment, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                             SVerticalAlignment="{Binding SVerticalAlignment, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                       
+                        <c:MarginSetter Margin="5,0,5,5" Grid.Row="1"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        SMargin="{Binding SMargin, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                        Grid.ColumnSpan="2"
+                                        />
+
+
+                        <c:GroupBox Title="尺寸" Margin="5"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    Grid.Column="1">
+                            <Grid Margin="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.5*"/>
+                                    <RowDefinition Height="0.5*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="0.5*"/>
+                                </Grid.ColumnDefinitions>
+                                <CheckBox x:Name="cbWidth" Content="宽度:" Margin="5,10,5,5"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          IsChecked="{Binding SIsWidthAuto, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
+                                          ToolTipService.ToolTip="自动" Padding="5,0,0,0"/>
+                                <toolkit:NumericUpDown Margin="0,5,10,5" Padding="2" VerticalAlignment="Center"
+                                                       Value="{Binding SWidth, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                       IsEnabled="{Binding IsChecked, Converter={StaticResource BoolConverter}, ElementName=cbWidth}"
+                                                       DecimalPlaces="1" Height="20" Grid.Column="1" Minimum="1" Maximum="1000"/>
+                                <CheckBox x:Name="cbHeight" Content="高度:" Margin="5,10,5,5" Grid.Row="1"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          IsChecked="{Binding SIsHeightAuto, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          Padding="5,0,0,0" ToolTipService.ToolTip="自动"/>
+                                <toolkit:NumericUpDown Margin="0,5,10,5" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" 
+                                                       Value="{Binding SHeight, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                       IsEnabled="{Binding IsChecked, Converter={StaticResource BoolConverter}, ElementName=cbHeight}" 
+                                                       DecimalPlaces="1" Height="20" Grid.Column="1" Minimum="1" Maximum="1000"/>
+                            </Grid>
+                        </c:GroupBox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary> 

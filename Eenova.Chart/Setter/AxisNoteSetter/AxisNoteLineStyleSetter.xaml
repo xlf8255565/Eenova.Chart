@@ -1,0 +1,73 @@
+﻿<local:BaseSetter x:Class="Eenova.Chart.Setter.AxisNoteLineStyleSetter"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                  xmlns:behaviors="clr-namespace:Eenova.Chart.Behaviors"
+                  xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                  xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                  mc:Ignorable="d"
+                  d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <!--<TextBlock Margin="5,10,5,5" Text="顶部偏移:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <toolkit:NumericUpDown x:Name="nbTop" Grid.Column="1" Margin="5" Height="22" 
+                               VerticalAlignment="Center" Minimum="-1000" Maximum="1000" DecimalPlaces="2"
+                               Value="{Binding Top,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>-->
+
+        <TextBlock Margin="5,10,5,5" Grid.Row="1" Text="箭头大小：" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <toolkit:NumericUpDown x:Name="nbArrowSize" Grid.Column="1" Margin="5" Grid.Row="1"
+                                       VerticalAlignment="Center" Maximum="50" DecimalPlaces="0"
+                                       Value="{Binding ArrowSize,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+
+        <TextBlock Margin="5,10,5,5" Grid.Row="2" Text="边线高度：" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <toolkit:NumericUpDown x:Name="nbSideHeight" Grid.Column="1" Margin="5" Grid.Row="2"
+                               VerticalAlignment="Center" Maximum="1000" DecimalPlaces="2"
+                               Value="{Binding SideHeight,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+
+        <TextBlock Text="起始值：" Grid.Row="3" Margin="5,10,5,5"
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <StackPanel Grid.Column="1"  Grid.Row="3" Margin="5">
+            <toolkit:NumericUpDown x:Name="nbStart" 
+                                   DecimalPlaces="2"
+                                   Minimum="-214748364700000"
+                                   Maximum="{Binding Value,ElementName=nbEnd}" 
+                                   Value="{Binding StartValue,Mode=TwoWay,UpdateSourceTrigger=Explicit}">
+                <i:Interaction.Behaviors>
+                    <behaviors:AutoDecimalPlacesBehavior/>
+                </i:Interaction.Behaviors>
+            </toolkit:NumericUpDown>
+            <c:SpanDateTimePicker x:Name="tpStart" Visibility="Collapsed"
+                                  SpanSeconds="{Binding Value,Mode=TwoWay,ElementName=nbStart}"/>
+        </StackPanel>
+
+        <TextBlock Text="结束值：" Grid.Row="4" Margin="5,10,5,5"
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <StackPanel Grid.Column="1"  Grid.Row="4" Margin="5">
+            <toolkit:NumericUpDown x:Name="nbEnd"
+                                   DecimalPlaces="2"
+                                   Maximum="214748364700000"
+                                   Minimum="{Binding Value,ElementName=nbStart}"
+                                   Value="{Binding EndValue,Mode=TwoWay,UpdateSourceTrigger=Explicit}">
+                <i:Interaction.Behaviors>
+                    <behaviors:AutoDecimalPlacesBehavior/>
+                </i:Interaction.Behaviors>
+            </toolkit:NumericUpDown>
+            <c:SpanDateTimePicker x:Name="tpEnd" Visibility="Collapsed"
+                                  SpanSeconds="{Binding Value,Mode=TwoWay,ElementName=nbEnd}"/>
+        </StackPanel>
+    </Grid>
+</local:BaseSetter>

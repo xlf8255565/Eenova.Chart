@@ -1,0 +1,13 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <!--<ResourceDictionary Source="AxisTitlePositionSetter.xaml"/>-->
+        <!--<ResourceDictionary Source="AxisLabelsPositionSetter.xaml"/>-->
+        <ResourceDictionary Source="NumbericTicksSetter.xaml"/>
+        <ResourceDictionary Source="TextTicksSetter.xaml"/>
+        <!--<ResourceDictionary Source="TicksStrokeSetter.xaml"/>-->
+        <!--<ResourceDictionary Source="FormatSetter.xaml"/>-->
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

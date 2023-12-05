@@ -1,0 +1,254 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                    xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                    xmlns:cv="clr-namespace:Eenova.Chart.Converters"
+                    mc:Ignorable="d">
+
+    <cv:Visibility2BoolConverter x:Key="Visibility2BoolConverter"/>
+
+    <Style TargetType="local:ShadowStrokeSetting">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ShadowStrokeSetting">
+                    <Grid Margin="0" Background="{TemplateBinding Background}">
+                        <Grid.ColumnDefinitions>
+                        	<ColumnDefinition Width="0.5*"/>
+                        	<ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                    	<Grid.RowDefinitions>
+                    		<RowDefinition Height="Auto"/>
+                    		<RowDefinition/>
+                    	</Grid.RowDefinitions>
+
+                        <c:StrokeSelector Header="线条" Grid.RowSpan="2" Margin="5"
+                    		Background="{TemplateBinding Background}"
+                    		BorderBrush="{TemplateBinding BorderBrush}"
+                    		SStroke="{Binding SStroke, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                    		SStrokeStyle="{Binding SStrokeStyle, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                    		SStrokeThickness="{Binding SStrokeThickness, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                    		SStrokeVisibility="{Binding SStrokeVisibility, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          d:LayoutOverrides="GridBox"
+                                          />
+                        <c:GroupBox Grid.Column="1" Margin="5" Title="阴影" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                        	<CheckBox Content="有无影响效果" Margin="10,5,5,5" VerticalAlignment="Center"
+                                      IsChecked="{Binding SShadowVisibility,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent},Converter={StaticResource Visibility2BoolConverter}}"/>
+                        </c:GroupBox>
+
+                    	<c:GroupBox Title="示例"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}" Grid.Column="1" Grid.Row="1" Margin="5,0,5,5">
+                    		<Grid>
+                    			<Grid Margin="0" VerticalAlignment="Center">
+                    				<Path Data="M16,22 L60,22"
+                                          Margin="0" Stretch="Fill" UseLayoutRounding="False"
+                                          Visibility="{TemplateBinding SStrokeVisibility}"
+                                          StrokeThickness="{TemplateBinding SStrokeThickness}"
+                                          StrokeDashArray="{Binding SStrokeStyle, RelativeSource={RelativeSource TemplatedParent}}"
+                                          Stroke="{TemplateBinding SStroke}"/>
+                    			</Grid>
+                    			<Grid Margin="0" VerticalAlignment="Center" Visibility="{TemplateBinding SShadowVisibility}">
+                    				<Path Data="M16,22 L60,22"
+                                          Margin="0" Stretch="Fill" UseLayoutRounding="False"
+                                          Visibility="{TemplateBinding SStrokeVisibility}"
+                                          StrokeThickness="{TemplateBinding SStrokeThickness}"
+                                          StrokeDashArray="{Binding SStrokeStyle, RelativeSource={RelativeSource TemplatedParent}}"
+                                          Stroke="{TemplateBinding SStroke}">
+                    					<Path.Effect>
+                    						<DropShadowEffect ShadowDepth="2"/>
+                    					</Path.Effect>
+                    				</Path>
+                    			</Grid>
+                    		</Grid>
+                    	</c:GroupBox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:StrokeSetting">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:StrokeSetting">
+                    <Grid Margin="0" Background="{TemplateBinding Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <c:StrokeSelector Header="线条" Grid.RowSpan="2" Margin="5"
+                                          Background="{TemplateBinding Background}"
+                                          BorderBrush="{TemplateBinding BorderBrush}"
+                                          SStroke="{Binding SStroke, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SStrokeStyle="{Binding SStrokeStyle, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SStrokeThickness="{Binding SStrokeThickness, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SStrokeVisibility="{Binding SStrokeVisibility, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          />
+
+                        <c:BorderPreview Margin="5"
+                                         BorderBrush="{TemplateBinding BorderBrush}"
+                                         Background="{TemplateBinding Background}"
+                                         SStroke="{TemplateBinding SStroke}"
+                                         SStrokeStyle="{TemplateBinding SStrokeStyle}"
+                                         SStrokeThickness="{TemplateBinding SStrokeThickness}"
+                                         SStrokeVisibility="{TemplateBinding SStrokeVisibility}" Grid.Column="1" MinHeight="100"
+                                         />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:BorderSetting">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:BorderSetting">
+                    <Grid Margin="0" Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <c:StrokeSelector Header="边框" Grid.RowSpan="2" Margin="5"
+                                          Background="{TemplateBinding Background}"
+                                          BorderBrush="{TemplateBinding BorderBrush}"
+                                          SStroke="{Binding SStroke, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SStrokeStyle="{Binding SStrokeStyle, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SStrokeThickness="{Binding SStrokeThickness, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SStrokeVisibility="{Binding SStrokeVisibility, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          />
+
+                        <c:BorderSelector Header="背景色" Margin="5" Grid.Column="1"
+                                          Background="{TemplateBinding Background}"
+                                          BorderBrush="{TemplateBinding BorderBrush}"
+                                          SBorderBrush="{Binding SBorderBrush, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SBorderVisibility="{Binding SBorderVisibility, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          />
+
+                        <c:BorderPreview Margin="5" Grid.Row="1" Grid.Column="1"
+                                         BorderBrush="{TemplateBinding BorderBrush}"
+                                         Background="{TemplateBinding Background}"
+                                         SBorderBrush="{TemplateBinding SBorderBrush}"
+                                         SBorderVisibility="{TemplateBinding SBorderVisibility}"
+                                         SStroke="{TemplateBinding SStroke}"
+                                         SStrokeStyle="{TemplateBinding SStrokeStyle}"
+                                         SStrokeThickness="{TemplateBinding SStrokeThickness}"
+                                         SStrokeVisibility="{TemplateBinding SStrokeVisibility}"
+                                         />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:AxisXTicksBorderSetting">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:AxisXTicksBorderSetting">
+                    <Grid Margin="0" Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <c:StrokeSelector Header="坐标轴" Grid.RowSpan="2" Margin="5"
+                                          Background="{TemplateBinding Background}"
+                                          BorderBrush="{TemplateBinding BorderBrush}"
+                                          SStroke="{Binding SStroke, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SStrokeStyle="{Binding SStrokeStyle, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SStrokeThickness="{Binding SStrokeThickness, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SStrokeVisibility="{Binding SStrokeVisibility, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          />
+
+                        <c:TicksShowXSelector Header="刻度线" Margin="5" Grid.Column="1"
+                                              Background="{TemplateBinding Background}"
+                                              BorderBrush="{TemplateBinding BorderBrush}"
+                                              SMainTicksShow="{Binding SMainTicksShow, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              SSubTicksShow="{Binding SSubTicksShow, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              />
+
+                        <c:BorderPreview Margin="5" Grid.Row="1" Grid.Column="1"
+                                         BorderBrush="{TemplateBinding BorderBrush}"
+                                         Background="{TemplateBinding Background}"
+                                         SBorderBrush="Transparent"
+                                         SBorderVisibility="Collapsed"
+                                         SStroke="{TemplateBinding SStroke}"
+                                         SStrokeStyle="{TemplateBinding SStrokeStyle}"
+                                         SStrokeThickness="{TemplateBinding SStrokeThickness}"
+                                         SStrokeVisibility="{TemplateBinding SStrokeVisibility}"
+                                         />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:AxisYTicksBorderSetting">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:AxisYTicksBorderSetting">
+                    <Grid Margin="0" Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <c:StrokeSelector Header="坐标轴" Grid.RowSpan="2" Margin="5"
+                                          Background="{TemplateBinding Background}"
+                                          BorderBrush="{TemplateBinding BorderBrush}"
+                                          SStroke="{Binding SStroke, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SStrokeStyle="{Binding SStrokeStyle, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SStrokeThickness="{Binding SStrokeThickness, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          SStrokeVisibility="{Binding SStrokeVisibility, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          />
+
+                        <c:TicksShowYSelector Header="刻度线" Margin="5" Grid.Column="1"
+                                              Background="{TemplateBinding Background}"
+                                              BorderBrush="{TemplateBinding BorderBrush}"
+                                              SMainTicksShow="{Binding SMainTicksShow, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              SSubTicksShow="{Binding SSubTicksShow, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              />
+
+                        <c:BorderPreview Margin="5" Grid.Row="1" Grid.Column="1"
+                                         BorderBrush="{TemplateBinding BorderBrush}"
+                                         Background="{TemplateBinding Background}"
+                                         SBorderBrush="Transparent"
+                                         SBorderVisibility="Collapsed"
+                                         SStroke="{TemplateBinding SStroke}"
+                                         SStrokeStyle="{TemplateBinding SStrokeStyle}"
+                                         SStrokeThickness="{TemplateBinding SStrokeThickness}"
+                                         SStrokeVisibility="{TemplateBinding SStrokeVisibility}"
+                                         />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,28 @@
+﻿<local:BaseSetter x:Class="Eenova.Chart.Setter.AxisNotePointingLineSetter"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  mc:Ignorable="d"
+                  d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <local:StrokeSelector x:Name="sStroke" Header="线条" Grid.RowSpan="2" Margin="5"
+                              SStroke="{Binding PointingLineStroke, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                              SStrokeStyle="{Binding PointingLineStyle, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                              SStrokeThickness="{Binding PointingLineThickness, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                              SStrokeVisibility="{Binding PointingLineVisibility, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+
+        <local:BorderPreview Margin="0,5,5,5" Grid.Column="1" MinHeight="100"
+                             SStroke="{Binding SStroke,ElementName=sStroke}"
+                             SStrokeStyle="{Binding SStrokeStyle,ElementName=sStroke}"
+                             SStrokeThickness="{Binding SStrokeThickness,ElementName=sStroke}"
+                             SStrokeVisibility="{Binding SStrokeVisibility,ElementName=sStroke}"/>
+    </Grid>
+</local:BaseSetter>

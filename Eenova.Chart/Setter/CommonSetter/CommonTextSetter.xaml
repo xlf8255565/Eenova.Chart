@@ -1,0 +1,14 @@
+﻿<local:BaseSetter x:Class="Eenova.Chart.Setter.CommonTextSetter"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  mc:Ignorable="d"
+                  d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <TextBox x:Name="tbText" Margin="5" VerticalAlignment="Top" 
+                 Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+    </Grid>
+</local:BaseSetter>

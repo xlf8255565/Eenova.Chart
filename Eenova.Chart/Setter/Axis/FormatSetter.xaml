@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                    xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                    >
+
+    <Style TargetType="local:NumbericFormatSetter">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:NumbericFormatSetter">
+                    <Grid>
+                        <c:GroupBox Margin="5" Title="数值"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}">
+                            <Grid>
+                                <c:NumbericFormatSelector VerticalAlignment="Top"
+                                                          Format="{Binding SFormat,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Grid>
+                        </c:GroupBox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="local:DateTimeFormatSetter">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:DateTimeFormatSetter">
+                    <Grid>
+                        <c:GroupBox Margin="5" Title="时间"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}">
+                            <Grid>
+                                <c:DateTimeFormatSelector VerticalAlignment="Top"
+                                                          Format="{Binding SFormat,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Grid>
+                        </c:GroupBox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="local:TextFormatSetter">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TextFormatSetter">
+                    <Grid>
+                        <c:GroupBox Margin="5" Title="文本"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}">
+                            <Grid>
+                                <c:TextFormatSelector VerticalAlignment="Top"
+                                                      Format="{Binding SFormat,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Grid>
+                        </c:GroupBox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

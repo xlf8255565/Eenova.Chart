@@ -1,0 +1,73 @@
+﻿<local:BaseSetter x:Class="Eenova.Chart.Setter.PlotAreaShowSetter"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:ecc="clr-namespace:Eenova.Chart.Converters"
+                  xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                  mc:Ignorable="d"
+                  d:DesignHeight="300" d:DesignWidth="400">
+
+    <local:BaseSetter.Resources>
+        <ecc:Visibility2BoolConverter x:Key="Visibility2BoolConverter"/>
+    </local:BaseSetter.Resources>
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <c:GroupBox Margin="5" Title="上半区">
+            <StackPanel>
+                <CheckBox x:Name="cbTopVisibility" Content="是否显示" Margin="5,5,5,0"
+                          IsChecked="{Binding TopVisibility,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+                <CheckBox x:Name="cbGridLineX1Visibility" Content="纵向网格线" Margin="10,5,5,0"
+                          IsChecked="{Binding GridLineX1.Visibility, Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+                <CheckBox x:Name="cbY1Visibility" Content="左边纵轴" Margin="10,5,5,0"
+                          IsChecked="{Binding AxisY1.Visibility,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+                <CheckBox x:Name="cbGridLineY1Visibility" Content="左边横向网格线" Margin="10,5,5,0"
+                          IsChecked="{Binding GridLineY1.Visibility,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+                <CheckBox x:Name="cbY3Visibility" Content="右边纵轴" Margin="10,5,5,0"
+                          IsChecked="{Binding AxisY3.Visibility,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+                <CheckBox x:Name="cbGridLineY3Visibility" Content="右边横向网格线" Margin="10,5,5,5"
+                          IsChecked="{Binding GridLineY3.Visibility,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+            </StackPanel>
+        </c:GroupBox>
+        <c:GroupBox Grid.Column="1" Margin="0,5,5,5" Title="下半区">
+            <StackPanel>
+                <CheckBox x:Name="cbBottomVisibility" Content="是否显示" Margin="5,5,5,0"
+                          IsChecked="{Binding BottomVisibility,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+                <CheckBox x:Name="cbGridLineX2Visibility" Content="纵向网格线" Margin="10,5,5,0"
+                          IsChecked="{Binding GridLineX2.Visibility,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+                <CheckBox x:Name="cbY2Visibility" Content="左边纵轴" Margin="10,5,5,0"
+                          IsChecked="{Binding AxisY2.Visibility,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+                <CheckBox x:Name="cbGridLineY2Visibility" Content="左边横向网格线" Margin="10,5,5,0"
+                          IsChecked="{Binding GridLineY2.Visibility,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+                <CheckBox x:Name="cbY4Visibility" Content="右边纵轴" Margin="10,5,5,0"
+                          IsChecked="{Binding AxisY4.Visibility,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+                <CheckBox x:Name="cbGridLineY4Visibility" Content="右边横向网格线" Margin="10,5,5,5"
+                          IsChecked="{Binding GridLineY4.Visibility,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+            </StackPanel>
+        </c:GroupBox>
+
+        <c:GroupBox Margin="5,0,5,5" Title="横轴显示" Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="cbXVisibility" Content="是否可见" Margin="10,0" HorizontalAlignment="Left" VerticalAlignment="Center"
+                          IsChecked="{Binding AxisX.Visibility,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Visibility2BoolConverter}}"/>
+                <!--<c:XAlignmentComboBox x:Name="cbbXAlignment" Grid.Column="1" Margin="10,0" Height="20" HorizontalAlignment="Left"
+                                      IsEnabled="{Binding IsChecked,ElementName=cbXVisibility}"
+                                      SelectedValue="{Binding XAlignment,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>-->
+            </Grid>
+        </c:GroupBox>
+
+    </Grid>
+</local:BaseSetter>

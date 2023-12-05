@@ -1,0 +1,164 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Styler/f:AxisLabelsStyler.cs" caret="0" fromTop="0" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Styler/f:XmlValueReader.cs" caret="0" fromTop="0" />
+      <File id="557D1E49-AA75-4001-8708-9611343692A4/f:App.xaml.cs" caret="878" fromTop="30" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:MouseDragElementBehavior.cs" caret="0" fromTop="0" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Elements/f:EventArgs.cs" caret="522" fromTop="18" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Elements/d:Chart/f:Chart.cs" caret="11823" fromTop="45" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Controls/f:EffectCircle.cs" caret="546" fromTop="20" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Elements/d:Axis/f:Axis.cs" caret="10496" fromTop="29" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Helpers/d:ValueCalculate/f:LogTTTValueCalculator.cs" caret="691" fromTop="25" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Helpers/d:CoordConvert/f:NumbericCoordConverter.cs" caret="1049" fromTop="29" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Helpers/d:ValueCalculate/f:ValueCalculateAlgorithm.cs" caret="8179" fromTop="29" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Helpers/d:ValueCalculate/f:LogTTFValueCalculator.cs" caret="814" fromTop="29" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Helpers/d:ValueCalculate/f:ValueCalculator.cs" caret="488" fromTop="17" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Setter/d:AxisSetter/f:AxisDateTimeTicksSetter.xaml" caret="2483" fromTop="4" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Setter/d:AxisSetter/f:AxisDateTimeTicksSetter.xaml.cs" caret="561" fromTop="18" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Setter/f:ISetter.cs" caret="461" fromTop="16" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Setter/f:BaseSetter.cs" caret="620" fromTop="3" />
+      <File id="557D1E49-AA75-4001-8708-9611343692A4/f:Page3.xaml.cs" caret="452" fromTop="0" />
+      <File id="557D1E49-AA75-4001-8708-9611343692A4/f:Page5.xaml.cs" caret="302" fromTop="7" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Elements/d:DataLink/f:DataPoint.cs" caret="489" fromTop="17" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointEventArgs.cs" caret="425" fromTop="16" />
+      <File id="9178230C-14BF-4493-ADFD-8556D75A6BC5/f:App.xaml.cs" caret="0" fromTop="0" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="1950" fromTop="38" />
+      <File id="557D1E49-AA75-4001-8708-9611343692A4/f:Page1.xaml.cs" caret="4878" fromTop="11" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Controls/f:ImproveMenuItem.cs" caret="5874" fromTop="18" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Elements/d:AxisNote/f:AxisNote.cs" caret="6938" fromTop="45" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Elements/d:DataLink/f:DataLink.cs" caret="4740" fromTop="23" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Elements/d:PlotArea/f:PlotArea.cs" caret="12138" fromTop="19" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Elements/d:Chart/f:ChartChild.cs" caret="617" fromTop="16" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Elements/d:Collection/f:DataLinkCollection.cs" caret="2356" fromTop="29" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="33" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="26" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="1022" fromTop="14" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="51" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointEventArgs.cs" caret="501" fromTop="17" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="29" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="43" />
+      <File id="557D1E49-AA75-4001-8708-9611343692A4/f:Page5.xaml.cs" caret="338" fromTop="9" />
+      <File id="557D1E49-AA75-4001-8708-9611343692A4/f:Page5.xaml.cs" caret="770" fromTop="25" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="28" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="44" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="26" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="22" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="26" />
+      <File id="557D1E49-AA75-4001-8708-9611343692A4/f:Page5.xaml.cs" caret="1408" fromTop="33" />
+      <File id="557D1E49-AA75-4001-8708-9611343692A4/f:Page5.xaml.cs" caret="903" fromTop="26" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="32" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="38" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="19" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="24" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="1173" fromTop="18" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="32" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="27" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="8" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="6778" fromTop="11" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="2797" fromTop="11" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="5328" fromTop="35" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="4470" fromTop="26" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="2135" fromTop="44" />
+      <File id="8ABD1150-2323-4007-ABE6-E1CB7296141F/d:Behaviors/f:DataLinkMovePointBehavior.cs" caret="1950" fromTop="38" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files\NUnit 2.5.10\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="j" priority="1" />
+      <Item value="return" priority="1" />
+      <Item value="false" priority="1" />
+      <Item value="true" priority="2" />
+      <Item value="public" priority="5" />
+      <Item value="DragEventHandler`0" priority="0" />
+      <Item value="EventArgs`0" priority="0" />
+      <Item value="int" priority="0" />
+      <Item value="double" priority="1" />
+      <Item value="if" priority="4" />
+      <Item value="var" priority="5" />
+      <Item value="point" priority="1" />
+      <Item value="args" priority="2" />
+      <Item value="event" priority="1" />
+      <Item value="EventHandler`0" priority="0" />
+      <Item value="sender" priority="0" />
+      <Item value="DataLinkMovePointEventArgs" priority="0" />
+      <Item value="PointIndex" priority="0" />
+      <Item value="UIElement`0" priority="0" />
+      <Item value="this" priority="3" />
+      <Item value="private" priority="0" />
+      <Item value="bool" priority="1" />
+      <Item value="PointMoved" priority="1" />
+      <Item value="NewValue" priority="0" />
+      <Item value="DataPoint" priority="0" />
+      <Item value="Math`0" priority="4" />
+      <Item value="link" priority="0" />
+      <Item value="Y2" priority="0" />
+      <Item value="old" priority="0" />
+      <Item value="offset" priority="0" />
+      <Item value="try" priority="0" />
+      <Item value="Cursors`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Eenova.Chart.Behaviors.DataLinkMovePointEventArgs">
+      <Item value="OldValue" priority="0" />
+      <Item value="NewValue" priority="0" />
+      <Item value="PointIndex" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Eenova.Chart.Elements.DataPoint">
+      <Item value="YValue" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Eenova.Chart.Behaviors.DataLinkMovePointBehavior">
+      <Item value="AssociatedObject" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Eenova.Chart.Elements.DataLink">
+      <Item value="ActualHeight" priority="0" />
+      <Item value="AddHandler`0" priority="0" />
+      <Item value="MouseMove" priority="1" />
+      <Item value="MouseLeftButtonUp" priority="0" />
+      <Item value="LinkedY" priority="0" />
+      <Item value="Cursor" priority="1" />
+      <Item value="MouseEnter" priority="0" />
+      <Item value="MouseLeave" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Math">
+      <Item value="Abs`0" priority="0" />
+      <Item value="Sqrt`0" priority="0" />
+      <Item value="Log`0" priority="2" />
+      <Item value="Pow`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Eenova.Chart.PlotY">
+      <Item value="Y3" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Eenova.Chart.Elements.Axis">
+      <Item value="SubUnit" priority="0" />
+      <Item value="MaxValue" priority="0" />
+      <Item value="MinValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Input.Cursors">
+      <Item value="SizeNS" priority="1" />
+      <Item value="Arrow" priority="2" />
+      <Item value="Eraser" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

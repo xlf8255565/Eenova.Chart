@@ -1,0 +1,5 @@
+E:\work\Chart\Eenova.App\Eenova.App.Web\bin\Eenova.App.Web.dll
+E:\work\Chart\Eenova.App\Eenova.App.Web\bin\Eenova.App.Web.pdb
+E:\work\Chart\Eenova.App\Eenova.App.Web\obj\Debug\Eenova.App.Web.dll
+E:\work\Chart\Eenova.App\Eenova.App.Web\obj\Debug\Eenova.App.Web.pdb
+E:\work\Chart\Eenova.App\Eenova.App.Web\obj\Debug\Eenova.App.Web.csprojResolveAssemblyReference.cache

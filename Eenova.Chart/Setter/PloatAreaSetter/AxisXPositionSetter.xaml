@@ -1,0 +1,72 @@
+﻿<local:BaseSetter x:Class="Eenova.Chart.Setter.AxisXPositionSetter"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:ecc="clr-namespace:Eenova.Chart.Converters"
+                  xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                  xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                  xmlns:behaviors="clr-namespace:Eenova.Chart.Behaviors"
+                  mc:Ignorable="d"
+                  d:DesignHeight="300" d:DesignWidth="400">
+
+    <local:BaseSetter.Resources>
+        <ecc:Visibility2BoolConverter x:Key="Visibility2BoolConverter"/>
+        <ecc:BoolConverter x:Key="BoolConverter"/>
+        <Style TargetType="RadioButton">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </local:BaseSetter.Resources>
+
+    <Grid Background="White">
+        <c:GroupBox Margin="5" Title="横轴位置">
+            <Grid VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <RadioButton x:Name="rbFixPosition" Content="固定"
+                             IsChecked="{Binding AxisX.IsFixPosition,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+                <c:XAlignmentComboBox x:Name="cbbXAlignment" Grid.Column="1" Margin="5"
+                                      IsEnabled="{Binding IsChecked,ElementName=rbFixPosition}"
+                                      SelectedValue="{Binding XAlignment,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+
+                <RadioButton x:Name="rbBindingPosition" Content="绑定" Grid.Row="1" VerticalAlignment="Top"
+                             IsChecked="{Binding IsChecked,ElementName=rbFixPosition,Converter={StaticResource BoolConverter}}"/>
+                <StackPanel Grid.Row="1" Grid.Column="1" Margin="5">
+                    <c:AxisYTypeComboBox x:Name="cbInternalPlotY" Margin="0,0,0,5"
+                                         IsEnabled="{Binding IsChecked,ElementName=rbBindingPosition}"
+                                         SelectedValue="{Binding InternalPlotY,Mode=TwoWay,UpdateSourceTrigger=Explicit}"/>
+                    <c:AxisYTypeComboBox x:Name="cbInternalPlotYEx" Visibility="Collapsed"
+                                         IsEnabled="{Binding IsChecked,ElementName=rbBindingPosition}"
+                                         SelectedValue="{Binding InternalPlotYEx,Mode=TwoWay}"/>
+
+                    <toolkit:NumericUpDown x:Name="nbNumericPosition"
+                                           DecimalPlaces="2"
+                                           Maximum="214748364700000"
+                                           Minimum="-214748364700000"
+                                           IsEnabled="{Binding IsChecked,ElementName=rbBindingPosition}"                                           
+                                           Value="{Binding AxisX.NumericPosition,Mode=TwoWay,UpdateSourceTrigger=Explicit}">
+                        <i:Interaction.Behaviors>
+                            <behaviors:AutoDecimalPlacesBehavior/>
+                        </i:Interaction.Behaviors>
+                    </toolkit:NumericUpDown>
+                    <c:SpanDateTimePicker x:Name="tpNumericPosition" Visibility="Collapsed"
+                                          IsEnabled="{Binding IsChecked,ElementName=rbBindingPosition}"
+                                          SpanSeconds="{Binding Value,Mode=TwoWay,ElementName=nbNumericPosition}"/>
+                    <TextBox x:Name="tbTextPosition" Visibility="Collapsed"
+                             IsEnabled="{Binding IsChecked,ElementName=rbBindingPosition}"
+                             Text="{Binding AxisX.TextPosition,Mode=TwoWay,UpdateSourceTrigger=Explicit }"/>
+                </StackPanel>
+            </Grid>
+        </c:GroupBox>
+    </Grid>
+</local:BaseSetter>

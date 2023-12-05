@@ -1,0 +1,61 @@
+﻿<controls:ChildWindow x:Class="Eenova.Chart.Elements.AxisNoteAddWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                      xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+                      xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+                      xmlns:c="clr-namespace:Eenova.Chart.Controls" FontFamily="NSimSun" FontSize="12"
+                      Title="添加注释设置">
+    
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+        	<RowDefinition Height="Auto" />
+        	<RowDefinition Height="Auto"/>
+        	<RowDefinition Height="Auto"/>
+        	<RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock HorizontalAlignment="Left" Margin="5,10,0,0" TextWrapping="Wrap" Text="上边距:" VerticalAlignment="Top"/>
+        <toolkit:NumericUpDown x:Name="nbOffset" Margin="50,5,0,0" Height="20" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" DecimalPlaces="2" Maximum="10000"/>
+
+        <Grid x:Name="NumbricPanel" Margin="0" Grid.Row="1">
+        	<Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+        	</Grid.RowDefinitions>
+        	<TextBlock HorizontalAlignment="Left" Margin="5,10,5,5" 
+                       TextWrapping="Wrap" Text="起始值:" VerticalAlignment="Top"/>
+        	<toolkit:NumericUpDown x:Name="nbStart" HorizontalAlignment="Left" 
+                                   Height="20" Margin="50,5,5,5" 
+                                   VerticalAlignment="Top" Width="100" DecimalPlaces="2"
+                                   Minimum="-1000000000000" Maximum="1000000000000"/>
+            
+        	<TextBlock HorizontalAlignment="Left" Margin="5,10,5,5" TextWrapping="Wrap" 
+                       Text="结束值:" VerticalAlignment="Top" Grid.Row="1"/>
+        	<toolkit:NumericUpDown x:Name="nbEnd" HorizontalAlignment="Left"
+                                   Height="20" Margin="50,5,5,5" VerticalAlignment="Top" 
+                                   Width="100" Grid.Row="1" Minimum="-1000000000000"
+                                   Maximum="1000000000000" DecimalPlaces="2"/>
+        </Grid>
+
+        <Grid x:Name="DateTimePanel" Margin="0" Grid.Row="2">
+        	<Grid.RowDefinitions>
+        		<RowDefinition Height="Auto"/>
+        		<RowDefinition Height="Auto"/>
+        	</Grid.RowDefinitions>
+        	<TextBlock HorizontalAlignment="Left" Margin="5,10,5,5" 
+                       TextWrapping="Wrap" Text="起始值:" VerticalAlignment="Top"/>
+        	<c:SpanDateTimePicker Margin="50,5,5,5" Orientation="Vertical" 
+                                  HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                  SpanSeconds="{Binding Value, ElementName=nbStart, Mode=TwoWay}"/>
+            
+        	<TextBlock HorizontalAlignment="Left" Margin="5,10,5,5" Grid.Row="1"
+                       TextWrapping="Wrap" Text="结束值:" Width="52" VerticalAlignment="Top"/>
+        	<c:SpanDateTimePicker Margin="50,5,5,5" Grid.Row="1" Orientation="Vertical"
+                                  HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                  SpanSeconds="{Binding Value, ElementName=nbEnd, Mode=TwoWay}"/>
+        </Grid>
+
+        <Button x:Name="CancelButton" Content="取消" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,5,0,0" Grid.Row="3" />
+        <Button x:Name="OKButton" Content="确定" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,5,79,0" Grid.Row="3" />
+    </Grid>
+</controls:ChildWindow>

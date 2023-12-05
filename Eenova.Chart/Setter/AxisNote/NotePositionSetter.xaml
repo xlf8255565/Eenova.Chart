@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                    xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                    >
+
+    <Style TargetType="local:NotePositionSetter">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:NotePositionSetter">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.4*"/>
+                            <ColumnDefinition Width="0.6*"/>
+                        </Grid.ColumnDefinitions>
+                        <c:GroupBox Margin="5" Title="方位"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}">
+                            <Grid Margin="0">
+                                <c:NoteLocationComboBox Margin="5" VerticalAlignment="Top"
+                                                        SelectedValue="{Binding SNoteLocation,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Grid>
+                        </c:GroupBox>
+                        
+                        <c:GroupBox Margin="5" Grid.Column="1" Title="偏移"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}">
+                            <Grid Margin="0" VerticalAlignment="Top">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Margin="5,10,5,5" TextWrapping="Wrap" Text="水平偏移:"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <toolkit:NumericUpDown Grid.Column="1" Margin="5" Height="22" 
+                                                       VerticalAlignment="Center" Minimum="-1000" Maximum="1000" DecimalPlaces="2"
+                                                       Value="{Binding SHorizontalOffset,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                                
+                                <TextBlock Margin="5,10,5,5" Grid.Row="1" TextWrapping="Wrap"
+                                           Text="竖直偏移:" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                                <toolkit:NumericUpDown Grid.Column="1" Margin="5" Grid.Row="1"
+                                                       VerticalAlignment="Center" Maximum="1000" DecimalPlaces="2"
+                                                       Value="{Binding SVerticalOffset,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Grid>
+                        </c:GroupBox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary> 

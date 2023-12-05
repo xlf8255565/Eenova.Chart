@@ -1,0 +1,51 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Setter"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                    xmlns:c="clr-namespace:Eenova.Chart.Controls"
+                    >
+
+    <Style TargetType="local:LegendAlignmentSetter">
+        <Setter Property="BorderBrush" Value="#FF00A7FF"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:LegendAlignmentSetter">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <c:GroupBox Margin="5" Title="方向"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}">
+                            <Grid Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Margin="15,5,5,5" TextWrapping="Wrap" Text="子项排列:" 
+                                           HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <c:OrientationComboBox Height="22" Margin="5,0,60,0"
+                                                       VerticalAlignment="Top" Grid.Column="1"
+                                                       SelectedValue="{Binding SOrientation, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Grid>
+                        </c:GroupBox>
+                        <c:GroupBox Margin="5,0,5,5" Title="示例" Grid.Row="1"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}">
+                            <toolkit:WrapPanel Margin="0"
+                                               Orientation="{TemplateBinding SOrientation}"
+                                               HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Border BorderBrush="Black" BorderThickness="1" Height="30" Width="30" Margin="2" Background="#FFED9696"/>
+                                <Border BorderBrush="Black" BorderThickness="1" Height="30" Width="30" Margin="2" Background="#FF87BA82"/>
+                                <Border BorderBrush="Black" BorderThickness="1" Height="30" Width="30" Margin="2" Background="#FF67B1AF"/>
+                            </toolkit:WrapPanel>
+                        </c:GroupBox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

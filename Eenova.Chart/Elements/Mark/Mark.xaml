@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:Eenova.Chart.Elements"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="local:Mark">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:Mark">
+                    <Border>
+                        <ContentPresenter Content="{TemplateBinding ItemHost}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>
